@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <meta name="description" content="WebCell 官方网站" />
+        <meta name="author" content="shiy2008@gmail.com" />
+
+        <link rel="icon" href="image/WebCell-0.png" />
+
+        <title>WebCell 官方网站</title>
+
+        <link
+            rel="stylesheet"
+            href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://lib.baomitu.com/font-awesome/5.3.1/web-fonts-with-css/css/fontawesome-all.min.css"
+        />
+        <link rel="stylesheet" href="page/index.css" />
+
+        <script src="https://lib.baomitu.com/babel-polyfill/7.0.0/polyfill.min.js"></script>
+        <script src="https://cdn.polyfill.io/v2/polyfill.js?features=Element.prototype.append,DocumentFragment.prototype.append"></script>
+        <script src="https://web-conf.leanapp.cn/node_modules/whatwg-fetch/dist/fetch.umd.js"></script>
+        <script src="https://lib.baomitu.com/webcomponentsjs/2.1.3/webcomponents-bundle.js"></script>
+        <script src="https://lib.baomitu.com/webcomponentsjs/2.1.3/custom-elements-es5-adapter.js"></script>
+
+        <script src="https://web-conf.leanapp.cn/node_modules/web-cell/dist/web-cell.min.js"></script>
+        <script src="https://web-conf.leanapp.cn/dist/Loading.js"></script>
+    </head>
+    <body>
+        <cell-loading count="1"></cell-loading>
+
+        <nav class="site-header sticky-top py-1">
+            <div
+                class="container d-flex flex-column flex-md-row justify-content-between"
+            >
+                <a class="py-2" href=".">
+                    <img
+                        title="WebCell"
+                        src="image/WebCell-0.png"
+                        class="d-block mx-auto"
+                    />
+                </a>
+                <a class="py-2 d-none d-md-inline-block" href="./WebCell/">
+                    API 文档
+                </a>
+                <a
+                    class="py-2 d-none d-md-inline-block"
+                    target="_blank"
+                    href="https://github.com/EasyWebApp/WebCell"
+                >
+                    开源代码
+                </a>
+                <a
+                    class="py-2 d-none d-md-inline-block"
+                    target="_blank"
+                    href="https://web-cell-ht.ml/"
+                >
+                    组件库
+                </a>
+                <a
+                    class="py-2 d-none d-md-inline-block"
+                    target="_blank"
+                    href="https://github.com/EasyWebApp"
+                >
+                    开发团队
+                </a>
+                <a
+                    class="py-2 d-none d-md-inline-block"
+                    target="_blank"
+                    href="https://github.com/TechQuery/TechQuery.github.io"
+                >
+                    关于作者
+                </a>
+            </div>
+        </nav>
+
+        <div
+            class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light"
+        >
+            <div class="col-md-5 p-lg-5 mx-auto my-5">
+                <p><img title="WebCell" src="image/WebCell-1.png" /></p>
+                <p class="lead font-weight-normal">优雅、轻量的 Web 组件引擎</p>
+            </div>
+            <div class="product-device shadow-sm d-none d-md-block"></div>
+            <div
+                class="product-device product-device-2 shadow-sm d-none d-md-block"
+            ></div>
+        </div>
+
+        <div class="container marketing">
+            <div class="row">
+                <div class="col-lg-4">
+                    <i class="fas fa-chart-line fa-9x text-success"></i>
+                    <h2>学习曲线平滑</h2>
+                    <p>
+                        组件语法完全遵循 HTML 5、CSS 3、JavaScript，API 完全基于
+                        DOM 封装、扩展。
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <i class="fas fa-database fa-9x text-primary"></i>
+                    <h2>数据驱动视图</h2>
+                    <p>基于“表达式求值”的异步增量更新机制实现 MVVM。</p>
+                </div>
+                <div class="col-lg-4">
+                    <i class="fas fa-toolbox fa-9x text-danger"></i>
+                    <h2>工具链零配置</h2>
+                    <p>官方维护一键开发工具，也兼容 webpack 等流行工具。</p>
+                </div>
+            </div>
+
+            <hr class="featurette-divider" />
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">
+                        API 扩展自<br />
+                        Web Components 规范
+                    </h2>
+                    <p class="lead">
+                        Web Components 被收录在 2019 年 W3C 正式发布的<br />
+                        HTML 5.3、DOM 4.1 标准，官方补丁支持 IE 11+
+                        等主流浏览器。
+                    </p>
+                </div>
+                <div
+                    class="col-md-5 background-image"
+                    style="background-image: url('image/Web-Components.svg')"
+                ></div>
+            </div>
+
+            <hr class="featurette-divider" />
+
+            <div class="row featurette">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading">
+                        语法遵循<br />
+                        ECMAScript 2018<br />
+                        和“装饰器”提案
+                    </h2>
+                    <p class="lead">逻辑代码简洁、优雅</p>
+                </div>
+                <div
+                    class="col-md-5 background-image"
+                    style="background-image: url('image/ECMAScript.png')"
+                ></div>
+            </div>
+
+            <hr class="featurette-divider" />
+
+            <div class="row featurette">
+                <div class="col-md-7">
+                    <h2 class="featurette-heading">
+                        官方组件库封装自<br />
+                        Google Material Design
+                    </h2>
+                    <p class="lead">
+                        用户界面清爽、灵动，<br />
+                        接口遵循 HTML “渐进增强、优雅降级”原则。
+                    </p>
+                </div>
+                <div
+                    class="col-md-5 background-image"
+                    style="background-image: url('image/Material-Design.jpg')"
+                ></div>
+            </div>
+
+            <hr class="featurette-divider" />
+        </div>
+
+        <footer class="container py-5">
+            <div class="row">
+                <div class="col-6 col-md">
+                    <img
+                        title="WebCell"
+                        src="image/WebCell-0.png"
+                        class="d-block mb-2"
+                    />
+                    <small class="d-block mb-3 text-muted"> &copy; 2018 </small>
+                </div>
+                <a
+                    class="col-6 col-md"
+                    target="_blank"
+                    href="https://jq.qq.com/?_wv=1027&k=5he1Sw1"
+                >
+                    <img src="image/EasyWebApp-QQ.png" title="QQ 群" />
+                </a>
+                <div class="col-12 col-md">
+                    <div class="row" data-array="menu">
+                        <template>
+                            <div class="col-4 col-md">
+                                <h5>${view.title}</h5>
+                                <ul
+                                    class="list-unstyled text-small"
+                                    data-array="menu"
+                                >
+                                    <template>
+                                        <li>
+                                            <a
+                                                class="text-muted"
+                                                target="${/^(\w+:)?\/\//.test(view.URL) ? '_blank' : ''}"
+                                                href="${view.URL}"
+                                            >
+                                                ${view.title}
+                                            </a>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://lib.baomitu.com/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+        <script src="https://lib.baomitu.com/holder/2.9.6/holder.min.js"></script>
+        <script>
+            Holder.addTheme("thumb", {
+                bg: "#55595c",
+                fg: "#eceeef",
+                text: "Thumbnail"
+            });
+        </script>
+        <script src="page/index.js"></script>
+    </body>
+</html>

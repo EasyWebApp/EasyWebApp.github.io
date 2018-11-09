@@ -1,0 +1,44 @@
+{
+    "name": "web-cell-home",
+    "version": "0.2.0",
+    "description": "Official site of WebCell",
+    "keywords": [
+        "WebCell",
+        "homepage",
+        "official",
+        "website"
+    ],
+    "author": "shiy2008@gmail.com",
+    "license": "AGPL-3.0",
+    "private": true,
+    "homepage": "https://web-cell.tk/",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EasyWebApp/EasyWebApp.github.io.git"
+    },
+    "bugs": {
+        "url": "https://github.com/EasyWebApp/EasyWebApp.github.io/issues"
+    },
+    "scripts": {
+        "start": "web-server -o",
+        "test": "prettier --write \"{,!(node_modules|.git|dist|docs)/**/}*.{html,md,css,less,js,json}\""
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm test  &&  git add ."
+        }
+    },
+    "engines": {
+        "node": "^8.0.0"
+    },
+    "dependencies": {
+        "koapache": "^1.0.4"
+    },
+    "devDependencies": {
+        "husky": "^1.1.3",
+        "prettier": "^1.15.1"
+    },
+    "prettier": {
+        "tabWidth": 4
+    }
+}

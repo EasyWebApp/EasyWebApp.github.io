@@ -1,0 +1,63 @@
+{
+    "menu": [
+        {
+            "title": "特性",
+            "menu": [
+                {
+                    "title": "API 文档",
+                    "URL": "./WebCell/"
+                },
+                {
+                    "title": "开源代码",
+                    "URL": "https://github.com/EasyWebApp/WebCell"
+                },
+                {
+                    "title": "组件库",
+                    "URL": "https://web-cell-ht.ml/"
+                }
+            ]
+        },
+        {
+            "title": "资源",
+            "menu": [
+                {
+                    "title": "Web components",
+                    "URL": "https://developer.mozilla.org/en-US/docs/Web/Web_Components"
+                },
+                {
+                    "title": "Custom elements",
+                    "URL": "https://developers.google.com/web/fundamentals/web-components/customelements"
+                },
+                {
+                    "title": "Shadow DOM",
+                    "URL": "https://developers.google.com/web/fundamentals/web-components/shadowdom"
+                },
+                {
+                    "title": "CSS variables",
+                    "URL": "https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables"
+                },
+                {
+                    "title": "ECMAScript 6+",
+                    "URL": "http://es6-features.org/"
+                },
+                {
+                    "title": "Decorator",
+                    "URL": "https://github.com/tc39/proposal-decorators#decorators"
+                }
+            ]
+        },
+        {
+            "title": "关于",
+            "menu": [
+                {
+                    "title": "开发团队",
+                    "URL": "https://github.com/EasyWebApp"
+                },
+                {
+                    "title": "关于作者",
+                    "URL": "https://github.com/TechQuery/TechQuery.github.io"
+                }
+            ]
+        }
+    ]
+}
