@@ -88,6 +88,11 @@ body > footer {
     word-break: keep-all;
     white-space: nowrap;
 }
+@media (max-width: 768px) {
+    .featurette .lead {
+        white-space: normal;
+    }
+}
 @media (min-width: 40em) {
     .featurette-heading {
         font-size: 50px;
