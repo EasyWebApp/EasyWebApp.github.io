@@ -5,10 +5,11 @@
     overflow: hidden;
 }
 .background-image {
+    min-width: 10rem;
+    min-height: 10rem;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    min-height: 10rem;
 }
 
 .site-header {
@@ -29,7 +30,7 @@ body > footer img.d-block {
     max-width: 1.5rem;
     max-height: 1.5rem;
 }
-body > footer {
+body > footer li {
     white-space: nowrap;
 }
 
@@ -75,7 +76,6 @@ body > footer {
 .marketing .col-lg-4 p {
     margin-right: 0.75rem;
     margin-left: 0.75rem;
-    text-align: left;
 }
 
 .featurette-divider {
