@@ -34,6 +34,20 @@ body > footer li {
     white-space: nowrap;
 }
 
+#Repository {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+#Repository > * {
+    margin-top: 5rem;
+}
+#Repository > :last-child {
+    margin-bottom: 5rem;
+}
+
 .product-device {
     position: absolute;
     right: 10%;
@@ -51,7 +65,7 @@ body > footer li {
     right: 10px;
     bottom: 10%;
     left: 10px;
-    content: "";
+    content: '';
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
 }
@@ -103,4 +117,8 @@ body > footer li {
     .featurette-heading {
         margin-top: 5.5rem;
     }
+}
+
+github-issue {
+    font-size: 0.75em;
 }

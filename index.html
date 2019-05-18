@@ -16,22 +16,30 @@
 
         <link
             rel="stylesheet"
-            href="https://lib.baomitu.com/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+            href="https://lib.baomitu.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
         />
         <link
             rel="stylesheet"
-            href="https://lib.baomitu.com/font-awesome/5.3.1/web-fonts-with-css/css/fontawesome-all.min.css"
+            href="https://lib.baomitu.com/font-awesome/5.8.2/css/all.css"
         />
         <link rel="stylesheet" href="page/index.css" />
 
-        <script src="https://lib.baomitu.com/babel-polyfill/7.0.0/polyfill.min.js"></script>
-        <script src="https://cdn.polyfill.io/v2/polyfill.js?features=Element.prototype.append,DocumentFragment.prototype.append"></script>
-        <script src="https://web-conf.leanapp.cn/node_modules/whatwg-fetch/dist/fetch.umd.js"></script>
-        <script src="https://lib.baomitu.com/webcomponentsjs/2.1.3/webcomponents-bundle.js"></script>
-        <script src="https://lib.baomitu.com/webcomponentsjs/2.1.3/custom-elements-es5-adapter.js"></script>
+        <script src="https://lib.baomitu.com/babel-polyfill/7.4.4/polyfill.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default%2CDocumentFragment.prototype.append%2CElement.prototype.append"></script>
+        <script src="https://lib.baomitu.com/webcomponentsjs/2.2.10/webcomponents-bundle.js"></script>
+        <script src="https://lib.baomitu.com/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
 
-        <script src="https://web-conf.leanapp.cn/node_modules/web-cell/dist/web-cell.min.js"></script>
-        <script src="https://web-conf.leanapp.cn/dist/Loading.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dom-renderer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/web-cell"></script>
+        <!-- <script src="https://web-conf.leanapp.cn/dist/Loading.js"></script> -->
+
+        <script src="https://cdn.jsdelivr.net/npm/github-web-widget/dist/github-element.js"></script>
+        <script src="https://lib.baomitu.com/marked/0.6.2/marked.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/github-web-widget/dist/mark-down.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/github-web-widget/dist/command-line.js"></script> -->
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/github-web-widget/dist/Repository.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/github-web-widget/dist/Issue.js"></script>
     </head>
     <body>
         <cell-loading count="1"></cell-loading>
@@ -63,6 +71,9 @@
                     href="https://web-cell-ht.ml/"
                 >
                     组件库
+                </a>
+                <a class="py-2 d-none d-md-inline-block" href="#Upstream">
+                    上游贡献
                 </a>
                 <a
                     class="py-2 d-none d-md-inline-block"
@@ -96,6 +107,16 @@
             <div
                 class="product-device product-device-2 shadow-sm d-none d-lg-block"
             ></div>
+        </div>
+
+        <div id="Repository">
+            <command-line>
+                <code>npm init web-cell path/to/your_project</code>
+            </command-line>
+            <github-repository
+                org="EasyWebApp"
+                repo="WebCell"
+            ></github-repository>
         </div>
 
         <div class="container marketing">
@@ -183,6 +204,21 @@
             <hr class="featurette-divider" />
         </div>
 
+        <section id="Upstream">
+            <h2 class="text-center display-4">反哺上游生态</h2>
+            <div class="container" data-key="upstream">
+                <template>
+                    <github-issue
+                        org="${view.org}"
+                        repo="${view.repo}"
+                        issue="${view.issue}"
+                        pull="${view.pull}"
+                    >
+                    </github-issue>
+                </template>
+            </div>
+        </section>
+
         <footer class="container py-5">
             <div class="row">
                 <div class="col-6 col-md">
@@ -223,7 +259,7 @@
                             xmlns:cc="http://creativecommons.org/ns#"
                             property="cc:attributionName"
                             rel="cc:attributionURL"
-                            href="https://web-cell.tk/"
+                            href="https://web-cell.dev/"
                         >
                             水歌 和 佳琪
                         </a>
@@ -241,9 +277,9 @@
                         <a
                             xmlns:dct="http://purl.org/dc/terms/"
                             rel="dct:source"
-                            href="https://web-cell.tk/WebCell/"
+                            href="https://web-cell.dev/WebCell/"
                         >
-                            https://web-cell.tk/WebCell/
+                            https://web-cell.dev/WebCell/
                         </a>
                         上的作品创作。
                     </small>
@@ -256,13 +292,13 @@
                     <img src="image/EasyWebApp-QQ.png" title="QQ 群" />
                 </a>
                 <div class="col-12 col-md">
-                    <div class="row" data-array="menu">
+                    <div class="row" data-key="menu">
                         <template>
                             <div class="col-4 col-md">
                                 <h5>${view.title}</h5>
                                 <ul
                                     class="list-unstyled text-small"
-                                    data-array="menu"
+                                    data-view="menu"
                                 >
                                     <template>
                                         <li>

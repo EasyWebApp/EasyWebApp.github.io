@@ -50,6 +50,10 @@
             "title": "关于",
             "menu": [
                 {
+                    "title": "上游贡献",
+                    "URL": "#Upstream"
+                },
+                {
                     "title": "开发团队",
                     "URL": "https://github.com/EasyWebApp"
                 },
@@ -58,6 +62,48 @@
                     "URL": "https://github.com/TechQuery/TechQuery.github.io"
                 }
             ]
+        }
+    ],
+    "upstream": [
+        {
+            "org": "webcomponents",
+            "repo": "shadydom",
+            "issue": 288
+        },
+        {
+            "org": "webcomponents",
+            "repo": "shadydom",
+            "pull": 294
+        },
+        {
+            "org": "tc39",
+            "repo": "proposal-decorators",
+            "pull": 154
+        },
+        {
+            "org": "babel",
+            "repo": "babel",
+            "issue": 8808
+        },
+        {
+            "org": "babel",
+            "repo": "babel-upgrade",
+            "issue": 88
+        },
+        {
+            "org": "babel",
+            "repo": "babel-upgrade",
+            "pull": 92
+        },
+        {
+            "org": "jsdom",
+            "repo": "w3c-xmlserializer",
+            "issue": 2
+        },
+        {
+            "org": "jsdom",
+            "repo": "w3c-xmlserializer",
+            "pull": 3
         }
     ]
 }
