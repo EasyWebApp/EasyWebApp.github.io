@@ -6,17 +6,14 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-
+        <link rel="icon" href="image/WebCell-0.png" />
+        <title>WebCell 官方网站</title>
         <meta name="description" content="WebCell 官方网站" />
         <meta name="author" content="shiy2008@gmail.com" />
 
-        <link rel="icon" href="image/WebCell-0.png" />
-
-        <title>WebCell 官方网站</title>
-
         <link
             rel="stylesheet"
-            href="https://lib.baomitu.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+            href="https://lib.baomitu.com/twitter-bootstrap/4.2.1/css/bootstrap.min.css"
         />
         <link
             rel="stylesheet"
@@ -31,18 +28,19 @@
 
         <script src="https://cdn.jsdelivr.net/npm/dom-renderer"></script>
         <script src="https://cdn.jsdelivr.net/npm/web-cell"></script>
-        <!-- <script src="https://web-conf.leanapp.cn/dist/Loading.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/cell-common/dist/load-cover.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/github-web-widget/dist/github-element.js"></script>
         <script src="https://lib.baomitu.com/marked/0.6.2/marked.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/github-web-widget/dist/code-parser.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/github-web-widget/dist/mark-down.js"></script>
-        <!-- <script src="https://cdn.jsdelivr.net/npm/github-web-widget/dist/command-line.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/github-web-widget/dist/command-line.js"></script>
 
-        <!-- <script src="https://cdn.jsdelivr.net/npm/github-web-widget/dist/Repository.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/github-web-widget/dist/Repository.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/github-web-widget/dist/Issue.js"></script>
     </head>
     <body>
-        <cell-loading count="1"></cell-loading>
+        <load-cover open></load-cover>
 
         <nav class="site-header sticky-top py-1">
             <div
@@ -68,7 +66,7 @@
                 <a
                     class="py-2 d-none d-md-inline-block"
                     target="_blank"
-                    href="https://web-cell-ht.ml/"
+                    href="https://github.com/EasyWebApp/material-cell"
                 >
                     组件库
                 </a>
@@ -85,7 +83,7 @@
                 <a
                     class="py-2 d-none d-md-inline-block"
                     target="_blank"
-                    href="https://github.com/TechQuery/TechQuery.github.io"
+                    href="https://tech-query.me/"
                 >
                     关于作者
                 </a>
@@ -206,7 +204,7 @@
 
         <section id="Upstream">
             <h2 class="text-center display-4">反哺上游生态</h2>
-            <div class="container" data-key="upstream">
+            <div class="container" data-view="upstream">
                 <template>
                     <github-issue
                         org="${view.org}"
@@ -228,7 +226,7 @@
                         class="d-block mb-2"
                     />
                     <small class="d-block mb-3 text-muted">
-                        &copy; 2018 -
+                        &copy; 2018 - 2019
                         <a target="_blank" href="https://github.com/EasyWebApp">
                             EasyWebApp team
                         </a>
@@ -292,7 +290,7 @@
                     <img src="image/EasyWebApp-QQ.png" title="QQ 群" />
                 </a>
                 <div class="col-12 col-md">
-                    <div class="row" data-key="menu">
+                    <div class="row" data-view="menu">
                         <template>
                             <div class="col-4 col-md">
                                 <h5>${view.title}</h5>

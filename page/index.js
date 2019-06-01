@@ -1,52 +1,40 @@
-(function($, WebCell, DOM_Renderer, Loading) {
+(function(WebCell, DOM_Renderer) {
     var request = WebCell.request,
         documentReady = WebCell.documentReady,
+        $ = WebCell.$,
+        ViewList = DOM_Renderer.ViewList,
         mediaReady = WebCell.mediaReady,
-        View = DOM_Renderer.default;
-
-    function render(element, data) {
-        var template = View.getTemplate(element);
-
-        data = data instanceof Array ? data : [data];
-
-        return Promise.all(
-            data.map(function(item) {
-                var view = new View(template);
-
-                return view.render(item).then(function() {
-                    return view.topNodes;
-                });
-            })
-        ).then(function(list) {
-            element.append.apply(element, [].concat.apply([], list));
-        });
-    }
+        delegate = WebCell.delegate;
 
     Promise.all([request('page/index.json'), documentReady])
         .then(function(data) {
             data = data[0].body;
 
-            return Array.prototype.reduce.call(
-                document.querySelectorAll('[data-key]'),
-                function(promise, element) {
-                    return promise.then(
-                        render.bind(null, element, data[element.dataset.key])
+            return Promise.all(
+                $('[data-view]').map(function(view) {
+                    return new ViewList(view, data).render(
+                        data[view.dataset.view]
                     );
-                },
-                Promise.resolve()
+                })
             );
         })
-        .then(mediaReady);
-    //  .then(Loading.closeAll.bind(Loading));
+        .then(function() {
+            return mediaReady();
+        })
+        .then(function() {
+            $('load-cover')[0].open = false;
+        });
 
-    $(document).on('click', 'footer a[href="#top"]', function() {
-        self.scrollTo(0, 0);
+    document.addEventListener(
+        'click',
+        delegate('a[href^="#"]', function(event) {
+            event.preventDefault();
 
-        return false;
-    });
-})(
-    self.jQuery,
-    self['web-cell'],
-    self['dom-renderer']
-    // self['Loading'].default
-);
+            const ID = this.getAttribute('href');
+
+            (ID === '#top' ? document.body : $(ID)[0]).scrollIntoView({
+                behavior: 'smooth'
+            });
+        })
+    );
+})(self['web-cell'], self['dom-renderer']);

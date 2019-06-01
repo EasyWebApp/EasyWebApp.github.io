@@ -28,14 +28,9 @@
             "pre-commit": "npm test  &&  git add ."
         }
     },
-    "engines": {
-        "node": "^8.0.0"
-    },
-    "dependencies": {
-        "koapache": "^1.0.6"
-    },
     "devDependencies": {
         "husky": "^2.3.0",
+        "koapache": "^1.0.6",
         "prettier": "^1.17.1"
     },
     "prettier": {

@@ -13,7 +13,7 @@
                 },
                 {
                     "title": "组件库",
-                    "URL": "https://web-cell-ht.ml/"
+                    "URL": "https://github.com/EasyWebApp/material-cell"
                 }
             ]
         },
@@ -42,7 +42,7 @@
                 },
                 {
                     "title": "Decorator",
-                    "URL": "https://github.com/tc39/proposal-decorators#decorators"
+                    "URL": "https://github.com/tc39/proposal-decorators/tree/master/previous#decorators"
                 }
             ]
         },
@@ -59,7 +59,7 @@
                 },
                 {
                     "title": "关于作者",
-                    "URL": "https://github.com/TechQuery/TechQuery.github.io"
+                    "URL": "https://tech-query.me/"
                 }
             ]
         }
@@ -94,6 +94,11 @@
             "org": "babel",
             "repo": "babel-upgrade",
             "pull": 92
+        },
+        {
+            "org": "jsdom",
+            "repo": "jsdom",
+            "issue": 2600
         },
         {
             "org": "jsdom",
