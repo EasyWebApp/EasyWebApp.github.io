@@ -1,0 +1,23 @@
+branches:
+    only:
+        - source
+
+language: node_js
+node_js:
+    - lts/*
+cache:
+    directories:
+        - node_modules
+
+install:
+    - npm install
+script:
+    - npm run build
+deploy:
+    provider: pages
+    on:
+        branch: source
+    skip_cleanup: true
+    local_dir: dist/
+    fqdn: ${DOMAIN}
+    token: ${TOKEN}
