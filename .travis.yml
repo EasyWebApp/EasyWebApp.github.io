@@ -20,4 +20,5 @@ deploy:
     skip_cleanup: true
     local_dir: dist/
     fqdn: ${DOMAIN}
+    target_branch: master
     token: ${TOKEN}

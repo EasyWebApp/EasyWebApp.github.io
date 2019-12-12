@@ -6,7 +6,7 @@ import { WebCell_0, EasyWebApp_QQ } from '../image';
 
 interface MenuItem {
     title: string;
-    URL?: string;
+    href?: string;
     menu?: MenuItem[];
 }
 
@@ -17,12 +17,12 @@ function FooterMenu({ data }: { data: MenuItem[] }) {
                 <div className="col-4 col-md">
                     <h5>{title}</h5>
                     <ul className="list-unstyled text-small">
-                        {menu?.map(({ URL, title }) => (
+                        {menu?.map(({ href, title }) => (
                             <li>
                                 <a
                                     className="text-muted"
-                                    target={isXDomain(URL) ? '_blank' : ''}
-                                    href={URL}
+                                    target={isXDomain(href) ? '_blank' : ''}
+                                    href={href}
                                 >
                                     {title}
                                 </a>
@@ -46,9 +46,20 @@ export function PageFrame({
 }) {
     return (
         <Fragment>
-            <NavBar title="WebCell" menu={header} />
+            <NavBar
+                narrow
+                menu={header}
+                title={
+                    <img
+                        alt="WebCell"
+                        src={WebCell_0}
+                        style={{ width: '2rem' }}
+                    />
+                }
+            />
+            <main className="mt-5">{defaultSlot}</main>
 
-            {defaultSlot}
+            <hr className="featurette-divider" />
 
             <footer className="container py-5">
                 <div className="row">

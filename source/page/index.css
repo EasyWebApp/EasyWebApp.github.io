@@ -30,22 +30,11 @@ body > footer img.d-block {
     max-width: 1.5rem;
     max-height: 1.5rem;
 }
+body > footer a {
+    margin: auto 0.25rem;
+}
 body > footer li {
     white-space: nowrap;
-}
-
-#Repository {
-    display: flex;
-    flex-direction: column;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-}
-#Repository > * {
-    margin-top: 5rem;
-}
-#Repository > :last-child {
-    margin-bottom: 5rem;
 }
 
 .product-device {
@@ -117,8 +106,4 @@ body > footer li {
     .featurette-heading {
         margin-top: 5.5rem;
     }
-}
-
-github-issue {
-    font-size: 0.75em;
 }
