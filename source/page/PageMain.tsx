@@ -34,7 +34,7 @@ export function PageMain() {
                     className="w-100 border-0 rounded"
                     style={{ height: '90vh' }}
                     title="WebCell scaffold"
-                    src="https://codesandbox.io/embed/github/EasyWebApp/scaffold/tree/master/?autoresize=1&amp;fontsize=14&amp;hidenavigation=1&amp;module=%2Fsrc%2FClock.tsx&amp;theme=dark"
+                    src="https://codesandbox.io/embed/webcell-demo-9gyll?autoresize=1&amp;fontsize=14&amp;hidenavigation=1&amp;module=%2Fsrc%2FClock.tsx&amp;theme=dark"
                     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
                     sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
                 />

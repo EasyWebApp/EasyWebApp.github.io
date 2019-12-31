@@ -106,7 +106,7 @@ export function PageFrame({
                                 rel="cc:attributionURL"
                                 href="https://web-cell.dev/"
                             >
-                                水歌 和 佳琪
+                                水歌 和 佳琦
                             </a>
                             采用
                             <a

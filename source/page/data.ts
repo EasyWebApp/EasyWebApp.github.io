@@ -1,3 +1,5 @@
+import { Google_Translate } from '../image';
+
 export const footer = [
     {
         title: '特性',
@@ -12,7 +14,7 @@ export const footer = [
             },
             {
                 title: '路由库',
-                href: 'https://github.com/EasyWebApp/cell-router/tree/v2'
+                href: 'https://web-cell.dev/cell-router/'
             },
             {
                 title: '组件库',
@@ -95,6 +97,13 @@ export const feature = [
         link: 'https://www.typescriptlang.org/'
     },
     {
+        title: '内置国际化工具',
+        summary:
+            '基于 TypeScript 枚举类型、ECMAScript 动态 import 提案，I18n 轻松支持',
+        logo: Google_Translate,
+        link: 'https://web-cell.dev/WebCell/#internationalization'
+    },
+    {
         title: '工具链采用零配置的 Parcel',
         summary: '项目启动分分钟，在线演示也只需一条网址',
         logo: 'https://github.com/parcel-bundler.png',
@@ -108,14 +117,14 @@ export const feature = [
     },
     {
         title: '简洁的官方路由库',
-        summary: '路径即状态，容器即组件',
+        summary: '路径即状态，容器即组件 —— 充分复用状态管理、组件引擎',
         logo: 'https://github.com/EasyWebApp.png',
-        link: 'https://github.com/EasyWebApp/cell-router/tree/v2'
+        link: 'https://web-cell.dev/cell-router/'
     },
     {
         title: '官方组件库基于 BootStrap 4',
         summary:
-            '用户界面简洁、清爽，HTML 结构规范、语义化，对 SEO、屏幕阅读器友好',
+            '用户界面简洁、清爽，HTML 结构规范、语义化，对 SEO、屏幕阅读器友好，一键适配 Material Design 等主题',
         logo: 'https://github.com/twbs.png',
         link: './BootCell/'
     },

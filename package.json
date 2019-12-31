@@ -1,6 +1,6 @@
 {
     "name": "web-cell-home",
-    "version": "1.0.0-alpha",
+    "version": "1.0.0-beta",
     "description": "Official site of WebCell",
     "keywords": [
         "WebCell",
@@ -20,29 +20,30 @@
         "url": "https://github.com/EasyWebApp/EasyWebApp.github.io/issues"
     },
     "dependencies": {
-        "boot-cell": "^0.15.2",
+        "boot-cell": "^0.18.1",
         "classnames": "^2.2.6",
-        "github-web-widget": "^3.0.0-beta.1",
-        "highlight.js": "^9.17.0",
-        "koajax": "^0.5.1",
-        "marked": "^0.7.0",
-        "web-cell": "^2.0.0-rc.9"
+        "github-web-widget": "^3.0.0-beta.2",
+        "highlight.js": "^9.17.1",
+        "koajax": "^0.5.2",
+        "marked": "^0.8.0",
+        "web-cell": "^2.0.0-rc.12"
     },
     "devDependencies": {
-        "@babel/core": "^7.7.5",
+        "@babel/core": "^7.7.7",
         "@types/classnames": "^2.2.9",
         "husky": "^3.1.0",
         "lint-staged": "^9.5.0",
         "parcel-bundler": "^1.12.4",
         "prettier": "^1.19.1",
-        "typescript": "^3.7.3"
+        "typescript": "^3.7.4",
+        "workbox-cli": "^4.3.1"
     },
     "prettier": {
         "tabWidth": 4,
         "singleQuote": true
     },
     "lint-staged": {
-        "*.{html,md,css,json,yml,ts,tsx}": [
+        "*.{html,md,css,json,yml,js,ts,tsx}": [
             "prettier --write",
             "git add"
         ]
@@ -50,7 +51,9 @@
     "scripts": {
         "start": "rm -rf dist/  &&  parcel source/index.html",
         "test": "lint-staged",
-        "build": "rm -rf dist/  &&  parcel build source/index.html --public-url ."
+        "pack-sw": "rm -f dist/sw.js.map  &&  workbox generateSW",
+        "pack-dist": "parcel build source/index.html --public-url .",
+        "build": "rm -rf dist/  &&  npm run pack-dist  &&  npm run pack-sw"
     },
     "husky": {
         "hooks": {
