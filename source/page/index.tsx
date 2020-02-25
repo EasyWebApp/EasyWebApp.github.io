@@ -1,10 +1,7 @@
-import { render, createCell } from 'web-cell';
+import { documentReady, render, createCell } from 'web-cell';
 
-import { PageMain } from './PageMain';
+import { PageRouter } from './Router';
 
-if ('serviceWorker' in navigator)
-    window.addEventListener('load', () =>
-        navigator.serviceWorker.register('../sw.ts')
-    );
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('../sw.ts');
 
-render(<PageMain />);
+documentReady.then(() => render(<PageRouter />));

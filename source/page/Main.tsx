@@ -1,16 +1,14 @@
 import { createCell, Fragment } from 'web-cell';
 import classNames from 'classnames';
 import { Button } from 'boot-cell/source/Form/Button';
-import { GithubIssue } from 'github-web-widget/source/Issue';
 
-import { PageFrame } from '../component/PageFrame';
-
-import * as data from './data';
+import { feature } from './data';
+import style from './Main.module.less';
 import { WebCell_1 } from '../image';
 
-export function PageMain() {
+export function MainPage() {
     return (
-        <PageFrame header={data.header} footer={data.footer}>
+        <Fragment>
             <section className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
                 <div className="col-md-5 p-lg-5 mx-auto my-5">
                     <p>
@@ -25,8 +23,12 @@ export function PageMain() {
                         即刻上手
                     </Button>
                 </div>
-                <div className="product-device shadow-sm d-none d-lg-block"></div>
-                <div className="product-device product-device-2 shadow-sm d-none d-lg-block"></div>
+                <div
+                    className={`${style['product-device']} shadow-sm d-none d-lg-block`}
+                />
+                <div
+                    className={`${style['product-device']} ${style['product-device-2']} shadow-sm d-none d-lg-block`}
+                />
             </section>
 
             <section className="container py-5" id="Demo">
@@ -43,7 +45,7 @@ export function PageMain() {
             <div className="container">
                 <h2 className="text-center display-4">核心特性</h2>
 
-                {data.feature.map(({ title, summary, link, logo }, index) => (
+                {feature.map(({ title, summary, link, logo }, index) => (
                     <Fragment>
                         <section
                             className={classNames(
@@ -54,7 +56,9 @@ export function PageMain() {
                             )}
                         >
                             <div>
-                                <h2 className="featurette-heading">{title}</h2>
+                                <h2 className={style['featurette-heading']}>
+                                    {title}
+                                </h2>
                                 <p className="lead">{summary}</p>
                             </div>
                             <a
@@ -66,23 +70,12 @@ export function PageMain() {
                             </a>
                         </section>
 
-                        <hr className="featurette-divider" />
+                        {index + 1 < feature.length ? (
+                            <hr className={style['featurette-divider']} />
+                        ) : null}
                     </Fragment>
                 ))}
             </div>
-
-            <section className="container" id="Upstream">
-                <h2 className="text-center display-4">反哺上游生态</h2>
-
-                {data.upstream.map(({ org, repo, issue, pull }) => (
-                    <GithubIssue
-                        owner={org}
-                        repository={repo}
-                        issue={issue}
-                        pull={pull}
-                    />
-                ))}
-            </section>
-        </PageFrame>
+        </Fragment>
     );
 }

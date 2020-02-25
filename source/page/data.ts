@@ -54,9 +54,8 @@ export const footer = [
                 href: 'http://es6-features.org/'
             },
             {
-                title: 'Decorator',
-                href:
-                    'https://github.com/tc39/proposal-decorators/tree/master/previous#decorators'
+                title: 'TypeScript 3+',
+                href: 'https://www.typescriptlang.org/'
             }
         ]
     },
@@ -65,7 +64,7 @@ export const footer = [
         menu: [
             {
                 title: '上游贡献',
-                href: '#Upstream'
+                href: 'upstream'
             },
             {
                 title: '开发团队',
@@ -95,6 +94,12 @@ export const feature = [
         logo:
             'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png',
         link: 'https://www.typescriptlang.org/'
+    },
+    {
+        title: '虚拟 DOM 引擎采用 SnabbDOM',
+        summary: '支持 HTML 5、SVG，性能高、可靠性强，全球用量最大、Vue 同款',
+        logo: 'https://github.com/snabbdom.png',
+        link: 'https://github.com/snabbdom/snabbdom'
     },
     {
         title: '内置国际化工具',
@@ -135,6 +140,12 @@ export const feature = [
         logo:
             'https://raw.githubusercontent.com/github/explore/087f23463641d25ee971402fa26e3dfb2855edb9/topics/koa/koa.png',
         link: './KoAJAX/'
+    },
+    {
+        title: '官方支持 MDX 语法解析',
+        summary: 'MarkDown 结合 JSX，文档更强大、更优雅',
+        logo: 'https://github.com/mdx-js.png',
+        link: './MarkCell/'
     }
 ];
 
