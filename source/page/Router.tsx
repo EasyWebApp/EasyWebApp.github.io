@@ -11,6 +11,7 @@ import { WebCell_0, EasyWebApp_QQ } from '../image';
 
 import { MainPage } from './Main';
 import { UpstreamPage } from './Upstream';
+import { CasePage } from './Case';
 
 @observer
 @component({
@@ -21,7 +22,8 @@ export class PageRouter extends HTMLRouter {
     protected history = history;
     protected routes = [
         { paths: [''], component: MainPage },
-        { paths: ['upstream'], component: UpstreamPage }
+        { paths: ['upstream'], component: UpstreamPage },
+        { paths: ['case'], component: CasePage }
     ];
 
     renderCopyright() {

@@ -56,7 +56,7 @@
         "modules": true
     },
     "scripts": {
-        "start": "rm -rf dist/  &&  parcel source/index.html",
+        "start": "rm -rf dist/  &&  parcel source/index.html --open",
         "test": "lint-staged",
         "pack-dist": "parcel build source/index.html --public-url .",
         "pack-sw": "rm -f dist/sw.js.map  &&  workbox generateSW",

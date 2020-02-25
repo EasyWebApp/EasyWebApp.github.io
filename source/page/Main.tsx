@@ -1,6 +1,7 @@
 import { createCell, Fragment } from 'web-cell';
 import classNames from 'classnames';
 import { Button } from 'boot-cell/source/Form/Button';
+import { TooltipBox } from 'boot-cell/source/Prompt/Tooltip';
 
 import { feature } from './data';
 import style from './Main.module.less';
@@ -19,9 +20,22 @@ export function MainPage() {
                     </p>
                     <p>让 Web 组件像细胞、蜂巢、元素一般简单而可靠</p>
 
-                    <Button kind="secondary" outline href="#Demo">
-                        即刻上手
-                    </Button>
+                    <div className="mt-4">
+                        <Button outline size="lg" className="mr-3" href="#Demo">
+                            在线体验
+                        </Button>
+                        <TooltipBox text="需先登录 GitHub">
+                            <Button
+                                kind="success"
+                                outline
+                                size="lg"
+                                target="_blank"
+                                href="https://github.com/EasyWebApp/scaffold/generate"
+                            >
+                                新建项目
+                            </Button>
+                        </TooltipBox>
+                    </div>
                 </div>
                 <div
                     className={`${style['product-device']} shadow-sm d-none d-lg-block`}

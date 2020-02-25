@@ -67,8 +67,8 @@ export const footer = [
                 href: 'upstream'
             },
             {
-                title: '开发团队',
-                href: 'https://github.com/EasyWebApp'
+                title: '用户案例',
+                href: 'case'
             },
             {
                 title: '关于作者',
@@ -194,5 +194,18 @@ export const upstream = [
         org: 'jsdom',
         repo: 'w3c-xmlserializer',
         pull: 3
+    }
+];
+
+export const cases = [
+    {
+        name: '成都 Web 开发者大会',
+        description: 'Web developer conference of ChengDu',
+        url: 'https://web-conf.dev/'
+    },
+    {
+        name: '新冠战疫信息平台',
+        description: 'COVID-19 Epidemic information platform',
+        url: 'https://wuhan2020.kaiyuanshe.cn/'
     }
 ];
