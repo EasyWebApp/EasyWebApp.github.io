@@ -2,7 +2,7 @@ import { component, createCell, Fragment } from 'web-cell';
 import { observer } from 'mobx-web-cell';
 import { HTMLRouter } from 'cell-router/source';
 import { NavBar } from 'boot-cell/source/Navigator';
-import { isXDomain } from 'koajax';
+import { isXDomain } from 'web-utility';
 
 import { history } from '../model';
 import { header, footer } from './data';

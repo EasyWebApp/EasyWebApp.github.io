@@ -1,4 +1,4 @@
-import { Google_Translate } from '../image';
+import { WebCell_0 } from '../image';
 
 export const footer = [
     {
@@ -6,7 +6,7 @@ export const footer = [
         menu: [
             {
                 title: 'API 文档',
-                href: './WebCell/'
+                href: 'https://web-cell.dev/WebCell/'
             },
             {
                 title: '开源代码',
@@ -18,11 +18,15 @@ export const footer = [
             },
             {
                 title: '组件库',
-                href: 'https://web-cell.dev/BootCell/'
+                href: 'https://bootstrap.web-cell.dev/'
             },
             {
                 title: '网络库',
                 href: 'https://web-cell.dev/KoAJAX/'
+            },
+            {
+                title: '网站生成器',
+                href: 'https://web-cell.dev/MarkCell/'
             }
         ]
     },
@@ -80,6 +84,16 @@ export const footer = [
 
 export const header = [...footer[0].menu, ...footer[2].menu];
 
+export const scaffold = Object.entries({
+    scaffold: '前台项目',
+    DashBoard: '后台项目',
+    'mark-wiki': '静态网站'
+}).map(([name, title]) => ({
+    title,
+    target: '_blank',
+    href: `https://github.com/EasyWebApp/${name}/generate`
+}));
+
 export const feature = [
     {
         title: 'API 扩展自 Web Components 规范',
@@ -100,13 +114,6 @@ export const feature = [
         summary: '支持 HTML 5、SVG，性能高、可靠性强，全球用量最大、Vue 同款',
         logo: 'https://github.com/snabbdom.png',
         link: 'https://github.com/snabbdom/snabbdom'
-    },
-    {
-        title: '内置国际化工具',
-        summary:
-            '基于 TypeScript 枚举类型、ECMAScript 动态 import 提案，I18n 轻松支持',
-        logo: Google_Translate,
-        link: 'https://web-cell.dev/WebCell/#internationalization'
     },
     {
         title: '工具链采用零配置的 Parcel',
@@ -131,7 +138,7 @@ export const feature = [
         summary:
             '用户界面简洁、清爽，HTML 结构规范、语义化，对 SEO、屏幕阅读器友好，一键适配 Material Design 等主题',
         logo: 'https://github.com/twbs.png',
-        link: './BootCell/'
+        link: 'https://bootstrap.web-cell.dev/'
     },
     {
         title: '中间件模式的 HTTP 客户端',
@@ -139,13 +146,21 @@ export const feature = [
             'API 遵循 RESTful 规范，上传、下载进度基于 Observable 提案，并支持 ECMAScript 2018 异步迭代接口',
         logo:
             'https://raw.githubusercontent.com/github/explore/087f23463641d25ee971402fa26e3dfb2855edb9/topics/koa/koa.png',
-        link: './KoAJAX/'
+        link: 'https://web-cell.dev/KoAJAX/'
+    },
+    {
+        title: '丰富的实用工具',
+        summary:
+            'DOM 接口、事件、动画、URL 解析、时间格式化、国际化、数据处理等实用方法',
+        logo: WebCell_0,
+        link: 'https://web-cell.dev/web-utility/'
     },
     {
         title: '官方支持 MDX 语法解析',
-        summary: 'MarkDown 结合 JSX，文档更强大、更优雅',
+        summary:
+            'MarkDown 结合 JSX，文档更强大、更优雅，并兼容 Jekyll、Hexo、Hugo、Gatsby 元数据字段',
         logo: 'https://github.com/mdx-js.png',
-        link: './MarkCell/'
+        link: 'https://web-cell.dev/MarkCell/'
     }
 ];
 
@@ -207,5 +222,10 @@ export const cases = [
         name: '新冠战疫信息平台',
         description: 'COVID-19 Epidemic information platform',
         url: 'https://wuhan2020.kaiyuanshe.cn/'
+    },
+    {
+        name: '开放黑客松平台',
+        description: 'Open Hackathon platform',
+        url: 'https://kaiyuanshe.cn/OpenHackathon-Web/'
     }
 ];

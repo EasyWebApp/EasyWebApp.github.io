@@ -2,8 +2,9 @@ import { createCell, Fragment } from 'web-cell';
 import classNames from 'classnames';
 import { Button } from 'boot-cell/source/Form/Button';
 import { TooltipBox } from 'boot-cell/source/Prompt/Tooltip';
+import { DropMenu } from 'boot-cell/source/Navigator';
 
-import { feature } from './data';
+import { scaffold, feature } from './data';
 import style from './Main.module.less';
 import { WebCell_1 } from '../image';
 
@@ -21,19 +22,15 @@ export function MainPage() {
                     <p>让 Web 组件像细胞、蜂巢、元素一般简单而可靠</p>
 
                     <div className="mt-4">
-                        <Button outline size="lg" className="mr-3" href="#Demo">
+                        <Button className="mr-3" href="#Demo">
                             在线体验
                         </Button>
                         <TooltipBox text="需先登录 GitHub">
-                            <Button
-                                kind="success"
-                                outline
-                                size="lg"
-                                target="_blank"
-                                href="https://github.com/EasyWebApp/scaffold/generate"
-                            >
-                                新建项目
-                            </Button>
+                            <DropMenu
+                                buttonKind="success"
+                                title="新建项目"
+                                list={scaffold}
+                            />
                         </TooltipBox>
                     </div>
                 </div>
