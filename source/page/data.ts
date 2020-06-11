@@ -227,5 +227,10 @@ export const cases = [
         name: '开放黑客松平台',
         description: 'Open Hackathon platform',
         url: 'https://kaiyuanshe.cn/OpenHackathon-Web/'
+    },
+    {
+        name: '23.5° 文化传播',
+        description: '23.5° Culture Co., Ltd',
+        url: 'https://in235.com/'
     }
 ];

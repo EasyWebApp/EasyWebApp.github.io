@@ -2,7 +2,7 @@ import { createCell, Fragment } from 'web-cell';
 import classNames from 'classnames';
 import { Button } from 'boot-cell/source/Form/Button';
 import { TooltipBox } from 'boot-cell/source/Prompt/Tooltip';
-import { DropMenu } from 'boot-cell/source/Navigator';
+import { DropMenu, DropMenuProps } from 'boot-cell/source/Navigator';
 
 import { scaffold, feature } from './data';
 import style from './Main.module.less';
@@ -29,7 +29,7 @@ export function MainPage() {
                             <DropMenu
                                 buttonKind="success"
                                 title="新建项目"
-                                list={scaffold}
+                                list={scaffold as DropMenuProps['list']}
                             />
                         </TooltipBox>
                     </div>

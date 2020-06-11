@@ -130,7 +130,7 @@ export class PageRouter extends HTMLRouter {
                         />
                     }
                 />
-                <main className="mt-5">{super.render()}</main>
+                <main>{super.render()}</main>
 
                 <hr className={style['featurette-divider']} />
 
