@@ -2,7 +2,9 @@ import { createCell, Fragment } from 'web-cell';
 import classNames from 'classnames';
 import { Button } from 'boot-cell/source/Form/Button';
 import { TooltipBox } from 'boot-cell/source/Prompt/Tooltip';
-import { DropMenu, DropMenuProps } from 'boot-cell/source/Navigator';
+import { DropMenu, DropMenuProps } from 'boot-cell/source/Navigator/DropMenu';
+import { Embed } from 'boot-cell/source/Media/Embed';
+import { Image } from 'boot-cell/source/Media/Image';
 
 import { scaffold, feature } from './data';
 import style from './Main.module.less';
@@ -43,9 +45,8 @@ export function MainPage() {
             </section>
 
             <section className="container py-5" id="Demo">
-                <iframe
-                    className="w-100 border-0 rounded"
-                    style={{ height: '90vh' }}
+                <Embed
+                    is="iframe"
                     title="WebCell scaffold"
                     src="https://codesandbox.io/embed/webcell-demo-9gyll?autoresize=1&amp;fontsize=14&amp;hidenavigation=1&amp;module=%2Fsrc%2FClock.tsx&amp;theme=dark"
                     allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
@@ -54,35 +55,39 @@ export function MainPage() {
             </section>
 
             <div className="container">
-                <h2 className="text-center display-4">核心特性</h2>
+                <h2 className="text-center display-4 mb-5">核心特性</h2>
 
                 {feature.map(({ title, summary, link, logo }, index) => (
                     <Fragment>
                         <section
                             className={classNames(
-                                'd-flex',
-                                'align-items-center',
-                                'justify-content-between',
+                                'row',
+                                'align-items-end',
                                 index % 2 && 'flex-row-reverse'
                             )}
                         >
-                            <div>
+                            <div className="col-md-10">
                                 <h2 className={style['featurette-heading']}>
                                     {title}
                                 </h2>
                                 <p className="lead">{summary}</p>
                             </div>
-                            <a
-                                className="w-25 mx-3"
-                                target="_blank"
-                                href={link}
-                            >
-                                <img className="img-fluid" src={logo} />
+                            <a className="col-md-2" target="_blank" href={link}>
+                                <Image
+                                    fluid
+                                    className={style['featurette-logo']}
+                                    src={logo}
+                                />
                             </a>
                         </section>
 
                         {index + 1 < feature.length ? (
-                            <hr className={style['featurette-divider']} />
+                            <hr
+                                className={classNames(
+                                    'my-5',
+                                    style['featurette-divider']
+                                )}
+                            />
                         ) : null}
                     </Fragment>
                 ))}

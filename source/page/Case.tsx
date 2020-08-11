@@ -1,6 +1,6 @@
 import { createCell, Fragment } from 'web-cell';
 import classNames from 'classnames';
-import { IFrame } from 'boot-cell/source/Content/IFrame';
+import { Embed } from 'boot-cell/source/Media/Embed';
 
 import style from './Case.module.less';
 import { cases } from './data';
@@ -29,7 +29,8 @@ function Case({
                 <h2 className="display-5">{name}</h2>
                 <p className="lead">{description}</p>
             </div>
-            <IFrame
+            <Embed
+                is="iframe"
                 className={classNames(
                     `bg-${reverse ? 'dark' : 'light'}`,
                     'shadow-sm',

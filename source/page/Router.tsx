@@ -1,7 +1,7 @@
 import { component, createCell, Fragment } from 'web-cell';
 import { observer } from 'mobx-web-cell';
 import { HTMLRouter } from 'cell-router/source';
-import { NavBar } from 'boot-cell/source/Navigator';
+import { NavBar } from 'boot-cell/source/Navigator/NavBar';
 import { isXDomain } from 'web-utility';
 
 import { history } from '../model';
@@ -29,8 +29,12 @@ export class PageRouter extends HTMLRouter {
     renderCopyright() {
         return (
             <Fragment>
-                <img title="WebCell" src={WebCell_0} className="d-block mb-2" />
-
+                <img
+                    className="d-block mb-2"
+                    style={{ maxWidth: '1.5rem' }}
+                    title="WebCell"
+                    src={WebCell_0}
+                />
                 <small className="d-block mb-3 text-muted">
                     &copy; 2018 - {new Date().getFullYear()}
                     <a target="_blank" href="https://github.com/EasyWebApp">
@@ -91,36 +95,31 @@ export class PageRouter extends HTMLRouter {
         );
     }
 
-    renderFooterMenu() {
-        return (
-            <div className="row">
-                {footer.map(({ title, menu }) => (
-                    <div className="col-4 col-md">
-                        <h5>{title}</h5>
-                        <ul className="list-unstyled text-small">
-                            {menu?.map(({ href, title }) => (
-                                <li>
-                                    <a
-                                        className="text-muted"
-                                        target={isXDomain(href) ? '_blank' : ''}
-                                        href={href}
-                                    >
-                                        {title}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+    renderFooterList = ({ title, menu }: typeof footer[0]) => (
+        <div className="col-4 col-md">
+            <h5>{title}</h5>
+            <ul className="list-unstyled text-small">
+                {menu?.map(({ href, title }) => (
+                    <li>
+                        <a
+                            className="text-muted"
+                            target={isXDomain(href) ? '_blank' : ''}
+                            href={href}
+                        >
+                            {title}
+                        </a>
+                    </li>
                 ))}
-            </div>
-        );
-    }
+            </ul>
+        </div>
+    );
 
     render() {
         return (
             <Fragment>
                 <NavBar
                     narrow
+                    menuAlign="around"
                     menu={header}
                     brand={
                         <img
@@ -146,9 +145,7 @@ export class PageRouter extends HTMLRouter {
                         >
                             <img src={EasyWebApp_QQ} title="QQ 群" />
                         </a>
-                        <div className="col-12 col-md">
-                            {this.renderFooterMenu()}
-                        </div>
+                        {footer.map(this.renderFooterList)}
                     </div>
                 </footer>
             </Fragment>

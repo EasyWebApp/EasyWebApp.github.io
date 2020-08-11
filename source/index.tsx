@@ -1,8 +1,21 @@
+import { serviceWorkerUpdate } from 'web-utility';
 import { documentReady, render, createCell } from 'web-cell';
 
 import { PageRouter } from './page/Router';
 
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.ts');
+const { serviceWorker } = window.navigator;
+
+serviceWorker
+    ?.register('/sw.js')
+    .then(serviceWorkerUpdate)
+    .then(worker => {
+        if (window.confirm('检测到新版本，是否立即启用？'))
+            worker.postMessage({ type: 'SKIP_WAITING' });
+    });
+
+serviceWorker?.addEventListener('controllerchange', () =>
+    window.location.reload()
+);
 
 documentReady.then(() =>
     render(<PageRouter />, document.body.firstElementChild)
