@@ -47,7 +47,7 @@ function Case({
 
 export function CasePage() {
     return (
-        <Fragment>
+        <>
             <h2 className="display-4 text-center pt-5">用户案例</h2>
             <p className="lead text-center">User cases</p>
 
@@ -65,6 +65,6 @@ export function CasePage() {
                     </div>
                 );
             })}
-        </Fragment>
+        </>
     );
 }

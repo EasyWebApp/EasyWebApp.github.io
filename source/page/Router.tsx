@@ -2,6 +2,7 @@ import { component, createCell, Fragment } from 'web-cell';
 import { observer } from 'mobx-web-cell';
 import { HTMLRouter } from 'cell-router/source';
 import { NavBar } from 'boot-cell/source/Navigator/NavBar';
+import { NavLink } from 'boot-cell/source/Navigator/Nav';
 import { isXDomain } from 'web-utility';
 
 import { history } from '../model';
@@ -28,7 +29,7 @@ export class PageRouter extends HTMLRouter {
 
     renderCopyright() {
         return (
-            <Fragment>
+            <>
                 <img
                     className="d-block mb-2"
                     style={{ maxWidth: '1.5rem' }}
@@ -91,7 +92,7 @@ export class PageRouter extends HTMLRouter {
                     </a>
                     上的作品创作。
                 </small>
-            </Fragment>
+            </>
         );
     }
 
@@ -116,11 +117,10 @@ export class PageRouter extends HTMLRouter {
 
     render() {
         return (
-            <Fragment>
+            <>
                 <NavBar
                     narrow
                     menuAlign="around"
-                    menu={header}
                     brand={
                         <img
                             alt="WebCell"
@@ -128,7 +128,12 @@ export class PageRouter extends HTMLRouter {
                             style={{ width: '2rem' }}
                         />
                     }
-                />
+                >
+                    {header.map(({ title, ...rest }) => (
+                        <NavLink {...rest}>{title}</NavLink>
+                    ))}
+                </NavBar>
+
                 <main>{super.render()}</main>
 
                 <hr className={style['featurette-divider']} />
@@ -148,7 +153,7 @@ export class PageRouter extends HTMLRouter {
                         {footer.map(this.renderFooterList)}
                     </div>
                 </footer>
-            </Fragment>
+            </>
         );
     }
 }

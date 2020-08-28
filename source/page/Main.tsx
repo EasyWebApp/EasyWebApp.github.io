@@ -2,7 +2,7 @@ import { createCell, Fragment } from 'web-cell';
 import classNames from 'classnames';
 import { Button } from 'boot-cell/source/Form/Button';
 import { TooltipBox } from 'boot-cell/source/Prompt/Tooltip';
-import { DropMenu, DropMenuProps } from 'boot-cell/source/Navigator/DropMenu';
+import { DropMenu, DropMenuItem } from 'boot-cell/source/Navigator/DropMenu';
 import { Embed } from 'boot-cell/source/Media/Embed';
 import { Image } from 'boot-cell/source/Media/Image';
 
@@ -12,7 +12,7 @@ import { WebCell_1 } from '../image';
 
 export function MainPage() {
     return (
-        <Fragment>
+        <>
             <section className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
                 <div className="col-md-5 p-lg-5 mx-auto my-5">
                     <p>
@@ -28,11 +28,13 @@ export function MainPage() {
                             在线体验
                         </Button>
                         <TooltipBox text="需先登录 GitHub">
-                            <DropMenu
-                                buttonKind="success"
-                                title="新建项目"
-                                list={scaffold as DropMenuProps['list']}
-                            />
+                            <DropMenu buttonColor="success" caption="新建项目">
+                                {scaffold.map(({ title, ...rest }) => (
+                                    <DropMenuItem {...rest}>
+                                        {title}
+                                    </DropMenuItem>
+                                ))}
+                            </DropMenu>
                         </TooltipBox>
                     </div>
                 </div>
@@ -58,7 +60,7 @@ export function MainPage() {
                 <h2 className="text-center display-4 mb-5">核心特性</h2>
 
                 {feature.map(({ title, summary, link, logo }, index) => (
-                    <Fragment>
+                    <>
                         <section
                             className={classNames(
                                 'row',
@@ -89,9 +91,9 @@ export function MainPage() {
                                 )}
                             />
                         ) : null}
-                    </Fragment>
+                    </>
                 ))}
             </div>
-        </Fragment>
+        </>
     );
 }

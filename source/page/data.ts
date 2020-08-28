@@ -1,3 +1,4 @@
+import { DropMenuItemProps } from 'boot-cell/source/Navigator/DropMenu';
 import { WebCell_0 } from '../image';
 
 export const footer = [
@@ -58,7 +59,7 @@ export const footer = [
                 href: 'http://es6-features.org/'
             },
             {
-                title: 'TypeScript 3+',
+                title: 'TypeScript 4+',
                 href: 'https://www.typescriptlang.org/'
             }
         ]
@@ -84,7 +85,7 @@ export const footer = [
 
 export const header = [...footer[0].menu, ...footer[2].menu];
 
-export const scaffold = Object.entries({
+export const scaffold: DropMenuItemProps[] = Object.entries({
     scaffold: '前台项目',
     DashBoard: '后台项目',
     'mark-wiki': '静态网站'
@@ -103,7 +104,7 @@ export const feature = [
         link: 'https://www.webcomponents.org/'
     },
     {
-        title: '语法遵循 TypeScript 3、Decorator 提案 和 JSX',
+        title: '语法遵循 TypeScript 4、Decorator 提案 和 JSX',
         summary: '声明式组件代码，简洁、优雅，一键享受 ECMAScript 成熟提案语法',
         logo:
             'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png',
@@ -196,6 +197,11 @@ export const upstream = [
         pull: 92
     },
     {
+        org: 'TypeStrong',
+        repo: 'ts-node',
+        issue: 990
+    },
+    {
         org: 'jsdom',
         repo: 'jsdom',
         issue: 2600
@@ -209,6 +215,36 @@ export const upstream = [
         org: 'jsdom',
         repo: 'w3c-xmlserializer',
         pull: 3
+    },
+    {
+        org: 'capricorn86',
+        repo: 'happy-dom',
+        issue: 33
+    },
+    {
+        org: 'snabbdom',
+        repo: 'snabbdom',
+        issue: 797
+    },
+    {
+        org: 'jvanbruegge',
+        repo: 'snabbdom-looks-like',
+        pull: 2
+    },
+    {
+        org: 'parcel-bundler',
+        repo: 'parcel',
+        issue: 4205
+    },
+    {
+        org: 'developit',
+        repo: 'microbundle',
+        issue: 711
+    },
+    {
+        org: 'BuilderIO',
+        repo: 'builder',
+        issue: 95
     }
 ];
 
