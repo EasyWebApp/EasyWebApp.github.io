@@ -1,7 +1,7 @@
 import { serviceWorkerUpdate } from 'web-utility';
 import { documentReady, render, createCell } from 'web-cell';
 
-import { PageRouter } from './page/Router';
+import { PageFrame } from './page/Router';
 
 const { serviceWorker } = window.navigator;
 
@@ -18,5 +18,5 @@ serviceWorker?.addEventListener('controllerchange', () =>
 );
 
 documentReady.then(() =>
-    render(<PageRouter />, document.body.firstElementChild)
+    render(<PageFrame />, document.body.firstElementChild)
 );

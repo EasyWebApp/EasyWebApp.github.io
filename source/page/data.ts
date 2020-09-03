@@ -242,6 +242,16 @@ export const upstream = [
         issue: 711
     },
     {
+        org: 'slune-org',
+        repo: 'ts-transform-asset',
+        issue: 2
+    },
+    {
+        org: 'slune-org',
+        repo: 'ts-transform-asset',
+        issue: 3
+    },
+    {
         org: 'BuilderIO',
         repo: 'builder',
         issue: 95
