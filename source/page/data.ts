@@ -50,6 +50,10 @@ export const footer = [
                     'https://developers.google.cn/web/fundamentals/web-components/shadowdom'
             },
             {
+                title: 'Element Internals',
+                href: 'https://web.dev/more-capable-form-controls/'
+            },
+            {
                 title: 'CSS variables',
                 href:
                     'https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables'
@@ -177,6 +181,11 @@ export const upstream = [
         pull: 294
     },
     {
+        org: 'calebdwilliams',
+        repo: 'element-internals-polyfill',
+        issue: 13
+    },
+    {
         org: 'tc39',
         repo: 'proposal-decorators',
         pull: 154
@@ -227,6 +236,11 @@ export const upstream = [
         issue: 797
     },
     {
+        org: 'snabbdom',
+        repo: 'snabbdom',
+        issue: 844
+    },
+    {
         org: 'jvanbruegge',
         repo: 'snabbdom-looks-like',
         pull: 2
@@ -260,6 +274,11 @@ export const upstream = [
 
 export const cases = [
     {
+        name: 'JavaScript 中文兴趣组',
+        description: 'JavaScript Chinese Interest Group',
+        url: 'https://jscig.github.io/'
+    },
+    {
         name: '成都 Web 开发者大会',
         description: 'Web developer conference of ChengDu',
         url: 'https://web-conf.dev/'
@@ -270,6 +289,11 @@ export const cases = [
         url: 'https://wuhan2020.kaiyuanshe.cn/'
     },
     {
+        name: '中国开源年会',
+        description: 'China Open Source Conference',
+        url: 'http://coscon.kaiyuanshe.cn/'
+    },
+    {
         name: '开放黑客松平台',
         description: 'Open Hackathon platform',
         url: 'https://kaiyuanshe.cn/OpenHackathon-Web/'
@@ -278,5 +302,10 @@ export const cases = [
         name: '23.5° 文化传播',
         description: '23.5° Culture Co., Ltd',
         url: 'https://in235.com/'
+    },
+    {
+        name: 'Shopify 采集平台',
+        description: 'Shopify Crawler platform',
+        url: 'https://shopifycopy.com/'
     }
 ];
