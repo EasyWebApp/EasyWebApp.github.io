@@ -1,4 +1,5 @@
 import { DropMenuItemProps } from 'boot-cell/source/Navigator/DropMenu';
+
 import { WebCell_0 } from '../image';
 
 export const footer = [
@@ -279,6 +280,16 @@ export const cases = [
         url: 'https://jscig.github.io/'
     },
     {
+        name: '中国 Python 开发者大会',
+        description: 'PyCon China',
+        url: 'https://cn.pycon.org/'
+    },
+    {
+        name: '中国开源年会',
+        description: 'China Open Source Conference',
+        url: 'http://coscon.kaiyuanshe.cn/'
+    },
+    {
         name: '成都 Web 开发者大会',
         description: 'Web developer conference of ChengDu',
         url: 'https://web-conf.dev/'
@@ -289,11 +300,6 @@ export const cases = [
         url: 'https://wuhan2020.kaiyuanshe.cn/'
     },
     {
-        name: '中国开源年会',
-        description: 'China Open Source Conference',
-        url: 'http://coscon.kaiyuanshe.cn/'
-    },
-    {
         name: '开放黑客松平台',
         description: 'Open Hackathon platform',
         url: 'https://kaiyuanshe.cn/OpenHackathon-Web/'
@@ -301,11 +307,11 @@ export const cases = [
     {
         name: '23.5° 文化传播',
         description: '23.5° Culture Co., Ltd',
-        url: 'https://in235.com/'
+        url: 'https://www.in235.com/'
     },
     {
         name: 'Shopify 采集平台',
         description: 'Shopify Crawler platform',
-        url: 'https://shopifycopy.com/'
+        url: 'http://shopifycopy.com/'
     }
 ];

@@ -5,13 +5,6 @@ import { Embed } from 'boot-cell/source/Media/Embed';
 import style from './Case.module.less';
 import { cases } from './data';
 
-const list = cases.reduce((list, item, index) => {
-    if (index % 2 === 0) list.push([item]);
-    else list.slice(-1)[0].push(item);
-
-    return list;
-}, [] as typeof cases[]);
-
 function Case({
     name,
     description,
@@ -21,7 +14,7 @@ function Case({
     return (
         <section
             className={
-                'flex-md-grow-1 mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center position-relative ' +
+                'col-12 col-md-6 my-3 my-md-0 pt-3 px-3 pt-md-5 px-md-5 text-center position-relative ' +
                 (reverse ? 'bg-light' : 'bg-dark text-white')
             }
         >
@@ -51,20 +44,14 @@ export function CasePage() {
             <h2 className="display-4 text-center pt-5">用户案例</h2>
             <p className="lead text-center">User cases</p>
 
-            {list.map((row, index) => {
-                const odd = index % 2;
+            <div className="row w-100 m-0">
+                {cases.map((item, index) => {
+                    const odd = index % 2;
+                    const order = Math.ceil((index + 1) / 2) % 2 ? !!odd : !odd;
 
-                return (
-                    <div className="d-md-flex w-100 my-md-3 pl-md-3">
-                        {row.map((item, index) => {
-                            const right = index % 2;
-                            const order = odd ? !!right : !right;
-
-                            return <Case {...item} reverse={order} />;
-                        })}
-                    </div>
-                );
-            })}
+                    return <Case {...item} reverse={order} />;
+                })}
+            </div>
         </>
     );
 }

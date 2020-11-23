@@ -10,6 +10,32 @@ import { scaffold, feature } from './data';
 import style from './Main.module.less';
 import { WebCell_1 } from '../image';
 
+function Feature({
+    reverse,
+    title,
+    summary,
+    link,
+    logo
+}: typeof feature[0] & { reverse: boolean }) {
+    return (
+        <section
+            className={classNames(
+                'row',
+                'align-items-end',
+                reverse && 'flex-row-reverse'
+            )}
+        >
+            <div className="col-md-10">
+                <h2 className={style['featurette-heading']}>{title}</h2>
+                <p className="lead">{summary}</p>
+            </div>
+            <a className="col-md-2" target="_blank" href={link}>
+                <Image fluid className={style['featurette-logo']} src={logo} />
+            </a>
+        </section>
+    );
+}
+
 export function MainPage() {
     return (
         <>
@@ -59,29 +85,9 @@ export function MainPage() {
             <div className="container">
                 <h2 className="text-center display-4 mb-5">核心特性</h2>
 
-                {feature.map(({ title, summary, link, logo }, index) => (
+                {feature.map((item, index) => (
                     <>
-                        <section
-                            className={classNames(
-                                'row',
-                                'align-items-end',
-                                index % 2 && 'flex-row-reverse'
-                            )}
-                        >
-                            <div className="col-md-10">
-                                <h2 className={style['featurette-heading']}>
-                                    {title}
-                                </h2>
-                                <p className="lead">{summary}</p>
-                            </div>
-                            <a className="col-md-2" target="_blank" href={link}>
-                                <Image
-                                    fluid
-                                    className={style['featurette-logo']}
-                                    src={logo}
-                                />
-                            </a>
-                        </section>
+                        <Feature {...item} reverse={!(index % 2)} />
 
                         {index + 1 < feature.length ? (
                             <hr

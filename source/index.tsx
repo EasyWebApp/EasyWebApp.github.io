@@ -1,7 +1,7 @@
 import { serviceWorkerUpdate } from 'web-utility';
 import { documentReady, render, createCell } from 'web-cell';
 
-import { PageFrame } from './page/Router';
+import { PageFrame } from './page';
 
 const { serviceWorker } = window.navigator;
 

@@ -24,7 +24,11 @@ function Copyright() {
             />
             <small className="d-block mb-3 text-muted">
                 &copy; 2018 - {new Date().getFullYear()}
-                <a target="_blank" href="https://github.com/EasyWebApp">
+                <a
+                    className="d-block"
+                    target="_blank"
+                    href="https://github.com/EasyWebApp"
+                >
                     EasyWebApp team
                 </a>
             </small>

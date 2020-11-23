@@ -32,7 +32,7 @@
         "web-utility": "^1.9.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.12.3",
+        "@babel/core": "^7.12.7",
         "@types/classnames": "^2.2.11",
         "autoprefixer": "^9.8.6",
         "husky": "^4.3.0",
