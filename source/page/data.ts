@@ -38,7 +38,7 @@ export const footer = [
             {
                 title: 'Web components',
                 href:
-                    'https://developer.mozilla.org/en-US/docs/Web/Web_Components'
+                    'https://developer.mozilla.org/zh-CN/docs/Web/Web_Components'
             },
             {
                 title: 'Custom elements',
@@ -52,12 +52,13 @@ export const footer = [
             },
             {
                 title: 'Element Internals',
-                href: 'https://web.dev/more-capable-form-controls/'
+                href:
+                    'https://tech-query.me/programming/more-capable-form-controls/'
             },
             {
                 title: 'CSS variables',
                 href:
-                    'https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables'
+                    'https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_variables'
             },
             {
                 title: 'ECMAScript 6+',
@@ -65,7 +66,7 @@ export const footer = [
             },
             {
                 title: 'TypeScript 4+',
-                href: 'https://www.typescriptlang.org/'
+                href: 'https://www.typescriptlang.org/zh/'
             }
         ]
     },
@@ -113,7 +114,7 @@ export const feature = [
         summary: '声明式组件代码，简洁、优雅，一键享受 ECMAScript 成熟提案语法',
         logo:
             'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png',
-        link: 'https://www.typescriptlang.org/'
+        link: 'https://www.typescriptlang.org/zh/'
     },
     {
         title: '虚拟 DOM 引擎采用 SnabbDOM',
@@ -125,13 +126,13 @@ export const feature = [
         title: '工具链采用零配置的 Parcel',
         summary: '项目启动分分钟，在线演示也只需一条网址',
         logo: 'https://github.com/parcel-bundler.png',
-        link: 'https://parceljs.org/'
+        link: 'https://zh.parceljs.org/'
     },
     {
         title: '官方适配 MobX 状态管理库',
         summary: '一致的装饰器风格，简洁的响应式更新',
         logo: 'https://github.com/mobxjs.png',
-        link: 'https://mobx.js.org/'
+        link: 'https://cn.mobx.js.org/'
     },
     {
         title: '简洁的官方路由库',
@@ -187,6 +188,16 @@ export const upstream = [
         issue: 13
     },
     {
+        org: 'calebdwilliams',
+        repo: 'element-internals-polyfill',
+        issue: 17
+    },
+    {
+        org: 'GoogleChrome',
+        repo: 'web.dev',
+        pull: 4400
+    },
+    {
         org: 'tc39',
         repo: 'proposal-decorators',
         pull: 154
@@ -210,6 +221,11 @@ export const upstream = [
         org: 'TypeStrong',
         repo: 'ts-node',
         issue: 990
+    },
+    {
+        org: 'TypeStrong',
+        repo: 'typedoc',
+        issue: 1401
     },
     {
         org: 'jsdom',

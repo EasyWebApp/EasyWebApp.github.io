@@ -50,7 +50,7 @@ export function MainPage() {
                     <p>让 Web 组件像细胞、蜂巢、元素一般简单而可靠</p>
 
                     <div className="mt-4">
-                        <Button className="mr-3" href="#Demo">
+                        <Button className="mr-3" color="primary" href="#Demo">
                             在线体验
                         </Button>
                         <TooltipBox text="需先登录 GitHub">
