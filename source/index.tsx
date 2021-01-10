@@ -1,4 +1,4 @@
-import { serviceWorkerUpdate } from 'web-utility';
+import { serviceWorkerUpdate } from 'web-utility/source/event';
 import { documentReady, render, createCell } from 'web-cell';
 
 import { PageFrame } from './page';

@@ -1,8 +1,10 @@
-import { createCell, Fragment } from 'web-cell';
+import { createCell, Fragment, WebCellProps } from 'web-cell';
 import { CellRouter } from 'cell-router/source';
 import { NavBar } from 'boot-cell/source/Navigator/NavBar';
 import { NavLink } from 'boot-cell/source/Navigator/Nav';
-import { isXDomain } from 'web-utility';
+import { DropMenuItem } from 'boot-cell/source/Navigator/DropMenu';
+import { isXDomain } from 'web-utility/source/URL';
+import classNames from 'classnames';
 
 import { history } from '../model';
 import { header, footer } from './data';
@@ -85,13 +87,20 @@ function Copyright() {
     );
 }
 
-function FooterList({ title, menu }: typeof footer[0]) {
+function FooterList({
+    className,
+    menu
+}: WebCellProps & Pick<typeof footer[0], 'menu'>) {
     return (
-        <div className="col-4 col-md">
-            <h5>{title}</h5>
-            <ul className="list-unstyled text-small">
-                {menu?.map(({ href, title }) => (
-                    <li>
+        <ul className={classNames('list-unstyled', 'text-small', className)}>
+            {menu?.map(({ menu, href, title }) => (
+                <li>
+                    {menu ? (
+                        <>
+                            {title}
+                            <FooterList className="pl-3" menu={menu} />
+                        </>
+                    ) : (
                         <a
                             className="text-muted"
                             target={isXDomain(href) ? '_blank' : ''}
@@ -99,10 +108,10 @@ function FooterList({ title, menu }: typeof footer[0]) {
                         >
                             {title}
                         </a>
-                    </li>
-                ))}
-            </ul>
-        </div>
+                    )}
+                </li>
+            ))}
+        </ul>
     );
 }
 
@@ -120,9 +129,17 @@ export function PageFrame() {
                     />
                 }
             >
-                {header.map(({ title, ...rest }) => (
-                    <NavLink {...rest}>{title}</NavLink>
-                ))}
+                {header.map(({ menu, title, ...rest }) =>
+                    menu ? (
+                        <NavLink title={title}>
+                            {menu.map(({ href, title }) => (
+                                <DropMenuItem href={href}>{title}</DropMenuItem>
+                            ))}
+                        </NavLink>
+                    ) : (
+                        <NavLink {...rest}>{title}</NavLink>
+                    )
+                )}
             </NavBar>
 
             <CellRouter
@@ -147,8 +164,11 @@ export function PageFrame() {
                     >
                         <img src={EasyWebApp_QQ} title="QQ 群" />
                     </a>
-                    {footer.map(item => (
-                        <FooterList {...item} />
+                    {footer.map(({ title, menu }) => (
+                        <div className="col-4 col-md">
+                            <h5>{title}</h5>
+                            <FooterList menu={menu} />
+                        </div>
                     ))}
                 </div>
             </footer>

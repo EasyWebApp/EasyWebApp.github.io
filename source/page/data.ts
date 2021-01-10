@@ -20,7 +20,16 @@ export const footer = [
             },
             {
                 title: '组件库',
-                href: 'https://bootstrap.web-cell.dev/'
+                menu: [
+                    {
+                        title: 'Bootstrap',
+                        href: 'https://bootstrap.web-cell.dev/'
+                    },
+                    {
+                        title: 'Material Design',
+                        href: 'https://material.web-cell.dev/'
+                    }
+                ]
             },
             {
                 title: '网络库',
@@ -73,18 +82,9 @@ export const footer = [
     {
         title: '关于',
         menu: [
-            {
-                title: '上游贡献',
-                href: 'upstream'
-            },
-            {
-                title: '用户案例',
-                href: 'case'
-            },
-            {
-                title: '关于作者',
-                href: 'https://tech-query.me/'
-            }
+            { title: '上游贡献', href: 'upstream' },
+            { title: '用户案例', href: 'case' },
+            { title: '关于作者', href: 'https://tech-query.me/' }
         ]
     }
 ];
@@ -94,6 +94,7 @@ export const header = [...footer[0].menu, ...footer[2].menu];
 export const scaffold: DropMenuItemProps[] = Object.entries({
     scaffold: '前台项目',
     DashBoard: '后台项目',
+    mobile: '移动应用',
     'mark-wiki': '静态网站'
 }).map(([name, title]) => ({
     title,
@@ -172,121 +173,32 @@ export const feature = [
 ];
 
 export const upstream = [
-    {
-        org: 'webcomponents',
-        repo: 'polyfills',
-        issue: 88
-    },
-    {
-        org: 'webcomponents',
-        repo: 'shadydom',
-        pull: 294
-    },
-    {
-        org: 'calebdwilliams',
-        repo: 'element-internals-polyfill',
-        issue: 13
-    },
-    {
-        org: 'calebdwilliams',
-        repo: 'element-internals-polyfill',
-        issue: 17
-    },
-    {
-        org: 'GoogleChrome',
-        repo: 'web.dev',
-        pull: 4400
-    },
-    {
-        org: 'tc39',
-        repo: 'proposal-decorators',
-        pull: 154
-    },
-    {
-        org: 'babel',
-        repo: 'babel',
-        issue: 8808
-    },
-    {
-        org: 'babel',
-        repo: 'babel-upgrade',
-        issue: 88
-    },
-    {
-        org: 'babel',
-        repo: 'babel-upgrade',
-        pull: 92
-    },
-    {
-        org: 'TypeStrong',
-        repo: 'ts-node',
-        issue: 990
-    },
-    {
-        org: 'TypeStrong',
-        repo: 'typedoc',
-        issue: 1401
-    },
-    {
-        org: 'jsdom',
-        repo: 'jsdom',
-        issue: 2600
-    },
-    {
-        org: 'jsdom',
-        repo: 'w3c-xmlserializer',
-        issue: 2
-    },
-    {
-        org: 'jsdom',
-        repo: 'w3c-xmlserializer',
-        pull: 3
-    },
-    {
-        org: 'capricorn86',
-        repo: 'happy-dom',
-        issue: 33
-    },
-    {
-        org: 'snabbdom',
-        repo: 'snabbdom',
-        issue: 797
-    },
-    {
-        org: 'snabbdom',
-        repo: 'snabbdom',
-        issue: 844
-    },
-    {
-        org: 'jvanbruegge',
-        repo: 'snabbdom-looks-like',
-        pull: 2
-    },
-    {
-        org: 'parcel-bundler',
-        repo: 'parcel',
-        issue: 4205
-    },
-    {
-        org: 'developit',
-        repo: 'microbundle',
-        issue: 711
-    },
-    {
-        org: 'slune-org',
-        repo: 'ts-transform-asset',
-        issue: 2
-    },
-    {
-        org: 'slune-org',
-        repo: 'ts-transform-asset',
-        issue: 3
-    },
-    {
-        org: 'BuilderIO',
-        repo: 'builder',
-        issue: 95
-    }
+    { org: 'webcomponents', repo: 'polyfills', issue: 88 },
+    { org: 'webcomponents', repo: 'shadydom', pull: 294 },
+    { org: 'calebdwilliams', repo: 'element-internals-polyfill', issue: 13 },
+    { org: 'calebdwilliams', repo: 'element-internals-polyfill', issue: 17 },
+    { org: 'GoogleChrome', repo: 'web.dev', pull: 4400 },
+    { org: 'tc39', repo: 'proposal-decorators', pull: 154 },
+    { org: 'babel', repo: 'babel', issue: 8808 },
+    { org: 'babel', repo: 'babel-upgrade', issue: 88 },
+    { org: 'babel', repo: 'babel-upgrade', pull: 92 },
+    { org: 'TypeStrong', repo: 'ts-node', issue: 990 },
+    { org: 'TypeStrong', repo: 'typedoc', issue: 1401 },
+    { org: 'TypeStrong', repo: 'typedoc', issue: 1432 },
+    { org: 'TypeStrong', repo: 'typedoc', issue: 1440 },
+    { org: 'jsdom', repo: 'jsdom', issue: 2600 },
+    { org: 'jsdom', repo: 'w3c-xmlserializer', issue: 2 },
+    { org: 'jsdom', repo: 'w3c-xmlserializer', pull: 3 },
+    { org: 'capricorn86', repo: 'happy-dom', issue: 33 },
+    { org: 'snabbdom', repo: 'snabbdom', issue: 797 },
+    { org: 'snabbdom', repo: 'snabbdom', issue: 844 },
+    { org: 'jvanbruegge', repo: 'snabbdom-looks-like', pull: 2 },
+    { org: 'parcel-bundler', repo: 'parcel', issue: 4205 },
+    { org: 'developit', repo: 'microbundle', issue: 711 },
+    { org: 'slune-org', repo: 'ts-transform-asset', issue: 2 },
+    { org: 'slune-org', repo: 'ts-transform-asset', issue: 3 },
+    { org: 'john-techfox', repo: 'quill-upload', issue: 8 },
+    { org: 'BuilderIO', repo: 'builder', issue: 95 }
 ];
 
 export const cases = [
