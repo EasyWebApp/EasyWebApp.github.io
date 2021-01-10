@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.less"],"names":[],"mappings":"AACI,yBAAA,WAEQ,iBAHZ,mBAOQ","file":"source.6bdfde35.css","sourceRoot":"../source","sourcesContent":[":global {\n    @media (min-width: 960px) {\n        .container {\n            max-width: 960px;\n        }\n    }\n    .gitter-chat-embed {\n        top: 3.7rem;\n    }\n}\n"]}
