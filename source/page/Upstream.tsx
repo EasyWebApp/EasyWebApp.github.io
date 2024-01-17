@@ -1,30 +1,26 @@
-import { component, mixin, createCell } from 'web-cell';
-import { EdgeEvent, EdgeDetector } from 'boot-cell/source/Content/EdgeDetector';
-import { GithubIssue } from 'github-web-widget/source/Issue';
+import { EdgeDetector, EdgeEvent } from 'boot-cell';
+import { GithubIssue } from 'github-web-widget';
+import { observable } from 'mobx';
+import { component, observer } from 'web-cell';
 
 import { upstream } from './data';
 
-interface UpstreamPageState {
-    list: typeof upstream;
-}
-
-@component({
-    tagName: 'upstream-page',
-    renderTarget: 'children'
-})
-export class UpstreamPage extends mixin<{}, UpstreamPageState>() {
+@component({ tagName: 'upstream-page' })
+@observer
+export class UpstreamPage extends HTMLElement {
     private pendingList = upstream.slice(2);
 
-    state = { list: upstream.slice(0, 2) };
+    @observable
+    accessor list = upstream.slice(0, 2);
 
     showMore = ({ detail }: EdgeEvent) => {
         if (detail === 'bottom' && this.pendingList[0])
-            this.setState({
-                list: [...this.state.list, this.pendingList.shift()]
-            });
+            this.list = [...this.list, this.pendingList.shift()];
     };
 
-    render(_, { list }: UpstreamPageState) {
+    render() {
+        const { list } = this;
+
         return (
             <EdgeDetector
                 className="container pt-5"

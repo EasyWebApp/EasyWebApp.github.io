@@ -1,4 +1,4 @@
-import { DropMenuItemProps } from 'boot-cell/source/Navigator/DropMenu';
+import { DropMenuItemProps } from 'boot-cell';
 
 import { WebCell_0 } from '../image';
 
@@ -46,28 +46,23 @@ export const footer = [
         menu: [
             {
                 title: 'Web components',
-                href:
-                    'https://developer.mozilla.org/zh-CN/docs/Web/Web_Components'
+                href: 'https://developer.mozilla.org/zh-CN/docs/Web/Web_Components'
             },
             {
                 title: 'Custom elements',
-                href:
-                    'https://developers.google.cn/web/fundamentals/web-components/customelements'
+                href: 'https://developers.google.cn/web/fundamentals/web-components/customelements'
             },
             {
                 title: 'Shadow DOM',
-                href:
-                    'https://developers.google.cn/web/fundamentals/web-components/shadowdom'
+                href: 'https://developers.google.cn/web/fundamentals/web-components/shadowdom'
             },
             {
                 title: 'Element Internals',
-                href:
-                    'https://tech-query.me/programming/more-capable-form-controls/'
+                href: 'https://tech-query.me/programming/more-capable-form-controls/'
             },
             {
                 title: 'CSS variables',
-                href:
-                    'https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_variables'
+                href: 'https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_variables'
             },
             {
                 title: 'ECMAScript 6+',
@@ -113,8 +108,7 @@ export const feature = [
     {
         title: '语法遵循 TypeScript 4、Decorator 提案 和 JSX',
         summary: '声明式组件代码，简洁、优雅，一键享受 ECMAScript 成熟提案语法',
-        logo:
-            'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png',
+        logo: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png',
         link: 'https://www.typescriptlang.org/zh/'
     },
     {
@@ -152,8 +146,7 @@ export const feature = [
         title: '中间件模式的 HTTP 客户端',
         summary:
             'API 遵循 RESTful 规范，上传、下载进度基于 Observable 提案，并支持 ECMAScript 2018 异步迭代接口',
-        logo:
-            'https://raw.githubusercontent.com/github/explore/087f23463641d25ee971402fa26e3dfb2855edb9/topics/koa/koa.png',
+        logo: 'https://raw.githubusercontent.com/github/explore/087f23463641d25ee971402fa26e3dfb2855edb9/topics/koa/koa.png',
         link: 'https://web-cell.dev/KoAJAX/'
     },
     {

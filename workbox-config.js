@@ -4,9 +4,7 @@ module.exports = {
         '**/*.{html,css,js,json,webmanifest,ico,gif,jpg,jpeg,png,webp}'
     ],
     swDest: 'dist/sw.js',
-    importScripts: [
-        'https://cdn.jsdelivr.net/npm/workbox-sw@6.0.2/build/workbox-sw.min.js'
-    ],
+    importScripts: ['https://unpkg.com/workbox-sw@7.0.0/build/workbox-sw.js'],
     clientsClaim: true,
     cleanupOutdatedCaches: true
 };
