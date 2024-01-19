@@ -1,7 +1,10 @@
-import { serviceWorkerUpdate } from 'web-utility/source/event';
-import { documentReady, render, createCell } from 'web-cell';
+import { DOMRenderer } from 'dom-renderer';
+import { configure } from 'mobx';
+import { documentReady, serviceWorkerUpdate } from 'web-utility';
 
 import { PageFrame } from './page';
+
+configure({ enforceActions: 'never' });
 
 const { serviceWorker } = window.navigator;
 
@@ -18,6 +21,4 @@ serviceWorker?.addEventListener('controllerchange', () =>
     window.location.reload()
 );
 
-documentReady.then(() =>
-    render(<PageFrame />, document.body.firstElementChild)
-);
+documentReady.then(() => new DOMRenderer().render(<PageFrame />));

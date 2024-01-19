@@ -1,4 +1,4 @@
-import { DropMenuItemProps } from 'boot-cell/source/Navigator/DropMenu';
+import { JsxProps } from 'dom-renderer';
 
 import { WebCell_0 } from '../image';
 
@@ -46,35 +46,30 @@ export const footer = [
         menu: [
             {
                 title: 'Web components',
-                href:
-                    'https://developer.mozilla.org/zh-CN/docs/Web/Web_Components'
+                href: 'https://developer.mozilla.org/zh-CN/docs/Web/Web_Components'
             },
             {
                 title: 'Custom elements',
-                href:
-                    'https://developers.google.cn/web/fundamentals/web-components/customelements'
+                href: 'https://developers.google.cn/web/fundamentals/web-components/customelements'
             },
             {
                 title: 'Shadow DOM',
-                href:
-                    'https://developers.google.cn/web/fundamentals/web-components/shadowdom'
+                href: 'https://developers.google.cn/web/fundamentals/web-components/shadowdom'
             },
             {
                 title: 'Element Internals',
-                href:
-                    'https://tech-query.me/programming/more-capable-form-controls/'
+                href: 'https://tech-query.me/programming/more-capable-form-controls/'
             },
             {
                 title: 'CSS variables',
-                href:
-                    'https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_variables'
+                href: 'https://developer.mozilla.org/zh-CN/docs/Web/CSS/Using_CSS_variables'
             },
             {
                 title: 'ECMAScript 6+',
                 href: 'http://es6-features.org/'
             },
             {
-                title: 'TypeScript 4+',
+                title: 'TypeScript 5+',
                 href: 'https://www.typescriptlang.org/zh/'
             }
         ]
@@ -91,7 +86,7 @@ export const footer = [
 
 export const header = [...footer[0].menu, ...footer[2].menu];
 
-export const scaffold: DropMenuItemProps[] = Object.entries({
+export const scaffold: JsxProps<HTMLAnchorElement>[] = Object.entries({
     scaffold: '前台项目',
     DashBoard: '后台项目',
     mobile: '移动应用',
@@ -111,29 +106,28 @@ export const feature = [
         link: 'https://www.webcomponents.org/'
     },
     {
-        title: '语法遵循 TypeScript 4、Decorator 提案 和 JSX',
+        title: '语法遵循 TypeScript 5、Decorator 提案 和 JSX',
         summary: '声明式组件代码，简洁、优雅，一键享受 ECMAScript 成熟提案语法',
-        logo:
-            'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png',
+        logo: 'https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png',
         link: 'https://www.typescriptlang.org/zh/'
     },
     {
-        title: '虚拟 DOM 引擎采用 SnabbDOM',
-        summary: '支持 HTML 5、SVG，性能高、可靠性强，全球用量最大、Vue 同款',
-        logo: 'https://github.com/snabbdom.png',
-        link: 'https://github.com/snabbdom/snabbdom'
+        title: '虚拟 DOM 引擎采用自研的 DOM Renderer',
+        summary: '支持 HTML 5、SVG，代码简洁、轻量',
+        logo: WebCell_0,
+        link: 'https://web-cell.dev/DOM-Renderer/'
     },
     {
         title: '工具链采用零配置的 Parcel',
         summary: '项目启动分分钟，在线演示也只需一条网址',
         logo: 'https://github.com/parcel-bundler.png',
-        link: 'https://zh.parceljs.org/'
+        link: 'https://parceljs.org/'
     },
     {
         title: '官方适配 MobX 状态管理库',
         summary: '一致的装饰器风格，简洁的响应式更新',
         logo: 'https://github.com/mobxjs.png',
-        link: 'https://cn.mobx.js.org/'
+        link: 'https://zh.mobx.js.org/'
     },
     {
         title: '简洁的官方路由库',
@@ -142,7 +136,7 @@ export const feature = [
         link: 'https://web-cell.dev/cell-router/'
     },
     {
-        title: '官方组件库基于 BootStrap 4',
+        title: '官方组件库基于 BootStrap 5',
         summary:
             '用户界面简洁、清爽，HTML 结构规范、语义化，对 SEO、屏幕阅读器友好，一键适配 Material Design 等主题',
         logo: 'https://github.com/twbs.png',
@@ -152,8 +146,7 @@ export const feature = [
         title: '中间件模式的 HTTP 客户端',
         summary:
             'API 遵循 RESTful 规范，上传、下载进度基于 Observable 提案，并支持 ECMAScript 2018 异步迭代接口',
-        logo:
-            'https://raw.githubusercontent.com/github/explore/087f23463641d25ee971402fa26e3dfb2855edb9/topics/koa/koa.png',
+        logo: 'https://raw.githubusercontent.com/github/explore/087f23463641d25ee971402fa26e3dfb2855edb9/topics/koa/koa.png',
         link: 'https://web-cell.dev/KoAJAX/'
     },
     {
@@ -228,18 +221,8 @@ export const cases = [
         url: 'https://wuhan2020.kaiyuanshe.cn/'
     },
     {
-        name: '开放黑客松平台',
-        description: 'Open Hackathon platform',
-        url: 'https://kaiyuanshe.cn/OpenHackathon-Web/'
-    },
-    {
         name: '23.5° 文化传播',
         description: '23.5° Culture Co., Ltd',
         url: 'https://www.in235.com/'
-    },
-    {
-        name: 'Shopify 采集平台',
-        description: 'Shopify Crawler platform',
-        url: 'http://shopifycopy.com/'
     }
 ];
