@@ -2,6 +2,6 @@ node_modules/
 package-lock.json
 yarn.lock
 dist/
-.cache/
+.parcel-cache/
 .husky/
 .vscode/

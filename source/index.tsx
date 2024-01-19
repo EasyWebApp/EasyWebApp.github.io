@@ -21,6 +21,4 @@ serviceWorker?.addEventListener('controllerchange', () =>
     window.location.reload()
 );
 
-documentReady.then(() =>
-    new DOMRenderer().render(<PageFrame />, document.body.firstElementChild)
-);
+documentReady.then(() => new DOMRenderer().render(<PageFrame />));

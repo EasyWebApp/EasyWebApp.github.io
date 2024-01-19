@@ -1,9 +1,9 @@
-import { Embed } from 'boot-cell';
+import { Ratio } from 'boot-cell';
+import { PageProps } from 'cell-router';
 import classNames from 'classnames';
-
-import * as style from './Case.module.less';
-import { cases } from './data';
 import { FC } from 'web-cell';
+
+import { cases } from './data';
 
 const Case: FC<(typeof cases)[0] & { reverse: boolean }> = ({
     name,
@@ -12,32 +12,29 @@ const Case: FC<(typeof cases)[0] & { reverse: boolean }> = ({
     reverse
 }) => (
     <section
-        className={
-            'col-12 col-md-6 my-3 my-md-0 pt-3 px-3 pt-md-5 px-md-5 text-center position-relative ' +
-            (reverse ? 'bg-light' : 'bg-dark text-white')
-        }
+        className={classNames(
+            'col-12 col-md-6 my-3 my-md-0 pt-3 px-3 pt-md-5 px-md-5 text-center position-relative',
+            reverse ? 'bg-light' : 'bg-dark text-white'
+        )}
     >
         <div className="my-3 py-3">
             <h2 className="display-5">{name}</h2>
             <p className="lead">{description}</p>
         </div>
-        <Embed
-            is="iframe"
-            className={classNames(
-                `bg-${reverse ? 'dark' : 'light'}`,
-                'shadow-sm',
-                'mx-auto',
-                style.preview
-            )}
-            scrolling="no"
-            src={url}
-        />
+        <Ratio>
+            <iframe
+                className={`bg-${reverse ? 'dark' : 'light'} shadow-sm mx-auto rounded-top-5`}
+                scrolling="no"
+                loading="lazy"
+                src={url}
+            />
+        </Ratio>
         <a className="stretched-link" target="_blank" href={url} />
     </section>
 );
 
-export const CasePage: FC = () => (
-    <>
+export const CasePage: FC<PageProps> = props => (
+    <main {...props}>
         <h2 className="display-4 text-center pt-5">用户案例</h2>
         <p className="lead text-center">User cases</p>
 
@@ -49,5 +46,5 @@ export const CasePage: FC = () => (
                 return <Case {...item} reverse={order} />;
             })}
         </div>
-    </>
+    </main>
 );

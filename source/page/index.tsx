@@ -1,4 +1,4 @@
-import { DropdownItem, NavLink, OffcanvasNavbar } from 'boot-cell';
+import { DropdownItem, NavDropdown, NavLink, OffcanvasNavbar } from 'boot-cell';
 import { createRouter } from 'cell-router';
 import classNames from 'classnames';
 import { FC, WebCellProps } from 'web-cell';
@@ -89,7 +89,7 @@ const FooterList: FC<WebCellProps & Pick<(typeof footer)[0], 'menu'>> = ({
 }) => (
     <ul className={classNames('list-unstyled', 'text-small', className)}>
         {menu?.map(({ menu, href, title }) => (
-            <li>
+            <li key={href}>
                 {menu ? (
                     <>
                         {title}
@@ -112,29 +112,43 @@ const FooterList: FC<WebCellProps & Pick<(typeof footer)[0], 'menu'>> = ({
 const { Route } = createRouter();
 
 export const PageFrame: FC = () => (
-    <>
+    <div className="d-flex flex-column" style={{ height: '300vh' }}>
         <OffcanvasNavbar
+            variant="dark"
+            expand="md"
+            sticky="top"
             brand={
                 <img alt="WebCell" src={WebCell_0} style={{ width: '2rem' }} />
             }
         >
-            {header.map(({ menu, title, ...rest }) =>
+            {header.map(({ menu, title, href }) =>
                 menu ? (
-                    <NavLink title={title}>
+                    <NavDropdown
+                        className="mx-3 my-md-0 mx-md-3"
+                        key={title}
+                        title={title}
+                    >
                         {menu.map(({ href, title }) => (
                             <DropdownItem href={href}>{title}</DropdownItem>
                         ))}
-                    </NavLink>
+                    </NavDropdown>
                 ) : (
-                    <NavLink {...rest}>{title}</NavLink>
+                    <NavLink
+                        className="m-3 my-md-0 mx-md-3"
+                        key={href}
+                        href={href?.startsWith('http') ? href : `#${href}`}
+                    >
+                        {title}
+                    </NavLink>
                 )
             )}
         </OffcanvasNavbar>
 
-        <Route path="" component={MainPage} />
-        <Route path="upstream" component={UpstreamPage} />
-        <Route path="case" component={CasePage} />
-
+        <div className="flex-fill overflow-auto scrollbar-none">
+            <Route path="" component={MainPage} />
+            <Route path="upstream" component={UpstreamPage} />
+            <Route path="case" component={CasePage} />
+        </div>
         <hr className={style['featurette-divider']} />
 
         <footer className="container py-5">
@@ -150,12 +164,12 @@ export const PageFrame: FC = () => (
                     <img src={EasyWebApp_QQ} title="QQ 群" />
                 </a>
                 {footer.map(({ title, menu }) => (
-                    <div className="col-4 col-md">
+                    <div className="col-4 col-md" key={title}>
                         <h5>{title}</h5>
                         <FooterList menu={menu} />
                     </div>
                 ))}
             </div>
         </footer>
-    </>
+    </div>
 );

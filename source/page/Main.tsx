@@ -1,17 +1,18 @@
 import {
     Button,
-    DropMenu,
-    DropMenuItem,
-    Embed,
+    DropdownButton,
+    DropdownItem,
     Image,
+    Ratio,
     TooltipBox
 } from 'boot-cell';
+import { PageProps } from 'cell-router';
 import classNames from 'classnames';
 import { FC } from 'web-cell';
 
 import { WebCell_1 } from '../image';
-import { feature, scaffold } from './data';
 import * as style from './Main.module.less';
+import { feature, scaffold } from './data';
 
 const Feature: FC<(typeof feature)[0] & { reverse: boolean }> = ({
     reverse,
@@ -37,8 +38,8 @@ const Feature: FC<(typeof feature)[0] & { reverse: boolean }> = ({
     </section>
 );
 
-export const MainPage: FC = () => (
-    <>
+export const MainPage: FC<PageProps> = props => (
+    <main {...props}>
         <section className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
             <div className="col-md-5 p-lg-5 mx-auto my-5">
                 <p>
@@ -53,12 +54,14 @@ export const MainPage: FC = () => (
                     <Button className="me-3" variant="primary" href="#Demo">
                         在线体验
                     </Button>
-                    <TooltipBox text="需先登录 GitHub">
-                        <DropMenu buttonColor="success" caption="新建项目">
+                    <TooltipBox content="需先登录 GitHub">
+                        <DropdownButton variant="success" caption="新建项目">
                             {scaffold.map(({ title, ...rest }) => (
-                                <DropMenuItem {...rest}>{title}</DropMenuItem>
+                                <DropdownItem key={title} {...rest}>
+                                    {title}
+                                </DropdownItem>
                             ))}
-                        </DropMenu>
+                        </DropdownButton>
                     </TooltipBox>
                 </div>
             </div>
@@ -71,13 +74,15 @@ export const MainPage: FC = () => (
         </section>
 
         <section className="container py-5" id="Demo">
-            <Embed
-                is="iframe"
-                title="WebCell scaffold"
-                src="https://codesandbox.io/embed/webcell-demo-9gyll?autoresize=1&amp;fontsize=14&amp;hidenavigation=1&amp;module=%2Fsrc%2FClock.tsx&amp;theme=dark"
-                allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-                sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
-            />
+            <Ratio aspectRatio="21x9">
+                <iframe
+                    title="WebCell scaffold"
+                    src="https://codesandbox.io/p/devbox/9gyll?embed=1&file=%2Fsrc%2FClock.tsx"
+                    loading="lazy"
+                    allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+                    sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
+                />
+            </Ratio>
         </section>
 
         <div className="container">
@@ -87,16 +92,16 @@ export const MainPage: FC = () => (
                 <>
                     <Feature {...item} reverse={!(index % 2)} />
 
-                    {index + 1 < feature.length ? (
+                    {index + 1 < feature.length && (
                         <hr
                             className={classNames(
                                 'my-5',
                                 style['featurette-divider']
                             )}
                         />
-                    ) : null}
+                    )}
                 </>
             ))}
         </div>
-    </>
+    </main>
 );
