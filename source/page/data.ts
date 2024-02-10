@@ -206,9 +206,9 @@ export const cases = [
         url: 'https://cn.pycon.org/'
     },
     {
-        name: '中国开源年会',
-        description: 'China Open Source Conference',
-        url: 'http://coscon.kaiyuanshe.cn/'
+        name: '开放原子基金会 2020 峰会',
+        description: 'OpenAtom foundation 2020 summit',
+        url: 'https://idea2app.github.io/OAF-event/'
     },
     {
         name: '成都 Web 开发者大会',

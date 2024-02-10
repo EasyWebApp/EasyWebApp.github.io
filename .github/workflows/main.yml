@@ -30,7 +30,9 @@ jobs:
               with:
                   publish_dir: ./dist
                   personal_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_branch: master
                   force_orphan: true
+                  cname: web-cell.dev
 
             - name: Deploy to Vercel
               uses: amondnet/vercel-action@v25

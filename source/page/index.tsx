@@ -123,19 +123,25 @@ export const PageFrame: FC = () => (
         >
             {header.map(({ menu, title, href }) =>
                 menu ? (
-                    <NavDropdown
-                        className="mx-3 my-md-0 mx-md-3"
-                        key={title}
-                        title={title}
-                    >
+                    <NavDropdown className="mx-3" key={title} title={title}>
                         {menu.map(({ href, title }) => (
-                            <DropdownItem href={href}>{title}</DropdownItem>
+                            <DropdownItem
+                                target={
+                                    href?.startsWith('http') ? '_top' : '_self'
+                                }
+                                href={
+                                    href?.startsWith('http') ? href : `#${href}`
+                                }
+                            >
+                                {title}
+                            </DropdownItem>
                         ))}
                     </NavDropdown>
                 ) : (
                     <NavLink
                         className="m-3 my-md-0 mx-md-3"
                         key={href}
+                        target={href?.startsWith('http') ? '_top' : '_self'}
                         href={href?.startsWith('http') ? href : `#${href}`}
                     >
                         {title}
