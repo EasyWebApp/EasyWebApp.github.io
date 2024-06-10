@@ -6,7 +6,6 @@ import {
     Ratio,
     TooltipBox
 } from 'boot-cell';
-import { PageProps } from 'cell-router';
 import classNames from 'classnames';
 import { FC } from 'web-cell';
 
@@ -38,8 +37,8 @@ const Feature: FC<(typeof feature)[0] & { reverse: boolean }> = ({
     </section>
 );
 
-export const MainPage: FC<PageProps> = props => (
-    <main {...props}>
+export const MainPage: FC = () => (
+    <main>
         <section className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
             <div className="col-md-5 p-lg-5 mx-auto my-5">
                 <p>

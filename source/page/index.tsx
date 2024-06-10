@@ -112,7 +112,7 @@ const FooterList: FC<WebCellProps & Pick<(typeof footer)[0], 'menu'>> = ({
 const { Route } = createRouter();
 
 export const PageFrame: FC = () => (
-    <div className="d-flex flex-column" style={{ height: '300vh' }}>
+    <>
         <OffcanvasNavbar
             variant="dark"
             expand="md"
@@ -177,5 +177,5 @@ export const PageFrame: FC = () => (
                 ))}
             </div>
         </footer>
-    </div>
+    </>
 );

@@ -1,5 +1,4 @@
 import { Ratio } from 'boot-cell';
-import { PageProps } from 'cell-router';
 import classNames from 'classnames';
 import { FC } from 'web-cell';
 
@@ -33,8 +32,8 @@ const Case: FC<(typeof cases)[0] & { reverse: boolean }> = ({
     </section>
 );
 
-export const CasePage: FC<PageProps> = props => (
-    <main {...props}>
+export const CasePage: FC = () => (
+    <main>
         <h2 className="display-4 text-center pt-5">用户案例</h2>
         <p className="lead text-center">User cases</p>
 
