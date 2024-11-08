@@ -4,4 +4,4 @@ yarn.lock
 dist/
 .parcel-cache/
 .husky/
-.vscode/
+.vscode/settings.json
