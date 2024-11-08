@@ -1,0 +1,1 @@
+{"name":"WebCell","short_name":"WebCell","start_url":"https://web-cell.dev/","description":"Web Components engine based on JSX & TypeScript","scope":"/","display":"standalone","orientation":"any","lang":"zh-CN","dir":"ltr","theme_color":"rgba(0,0,0,0.5)","background_color":"transparent","icons":[{"src":"WebCell-0.f9823b00.png","type":"image/png","sizes":"300x300"}]}
