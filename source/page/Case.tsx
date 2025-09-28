@@ -1,4 +1,4 @@
-import { Ratio } from 'boot-cell';
+import { Ratio, Row } from 'boot-cell';
 import classNames from 'classnames';
 import { FC } from 'web-cell';
 
@@ -37,13 +37,13 @@ export const CasePage: FC = () => (
         <h2 className="display-4 text-center pt-5">用户案例</h2>
         <p className="lead text-center">User cases</p>
 
-        <div className="row w-100 m-0">
+        <Row className="w-100 m-0">
             {cases.map((item, index) => {
                 const odd = index % 2;
                 const order = Math.ceil((index + 1) / 2) % 2 ? !!odd : !odd;
 
                 return <Case {...item} reverse={order} />;
             })}
-        </div>
+        </Row>
     </main>
 );

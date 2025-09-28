@@ -20,33 +20,42 @@
         "url": "https://github.com/EasyWebApp/EasyWebApp.github.io/issues"
     },
     "dependencies": {
-        "boot-cell": "^2.0.0-beta.29",
-        "cell-router": "^3.0.0-rc.8",
+        "boot-cell": "^2.0.0-rc.19",
+        "cell-router": "^4.0.3",
         "classnames": "^2.5.1",
-        "dom-renderer": "^2.4.2",
-        "github-web-widget": "^4.0.0-rc.2",
-        "koajax": "^3.0.3",
-        "marked": "^14.1.4",
-        "mobx": "^6.13.5",
-        "prismjs": "^1.29.0",
-        "web-cell": "^3.0.0",
-        "web-utility": "^4.4.2"
+        "dom-renderer": "^2.6.2",
+        "github-web-widget": "^4.0.0",
+        "koajax": "^3.1.2",
+        "marked": "^16.3.0",
+        "mobx": "^6.15.0",
+        "prismjs": "^1.30.0",
+        "web-cell": "^3.2.1",
+        "web-utility": "^4.6.1"
     },
     "devDependencies": {
-        "@parcel/config-default": "~2.12.0",
-        "@parcel/packager-raw-url": "~2.12.0",
-        "@parcel/transformer-less": "~2.12.0",
-        "@parcel/transformer-typescript-tsc": "~2.12.0",
-        "@parcel/transformer-webmanifest": "~2.12.0",
-        "@types/node": "^20.17.6",
-        "husky": "^9.1.6",
-        "lint-staged": "^15.2.10",
-        "parcel": "~2.12.0",
-        "prettier": "^3.3.3",
-        "typescript": "~5.6.3",
+        "@parcel/config-default": "~2.16.0",
+        "@parcel/packager-raw-url": "~2.16.0",
+        "@parcel/transformer-less": "~2.16.0",
+        "@parcel/transformer-typescript-tsc": "~2.16.0",
+        "@parcel/transformer-webmanifest": "~2.16.0",
+        "@types/node": "^22.18.6",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.1",
+        "parcel": "~2.16.0",
+        "prettier": "^3.6.2",
+        "typescript": "~5.9.2",
         "workbox-cli": "^7.3.0"
     },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "@parcel/watcher",
+            "@swc/core",
+            "lmdb",
+            "msgpackr-extract"
+        ]
+    },
     "prettier": {
+        "printWidth": 100,
         "tabWidth": 4,
         "trailingComma": "none",
         "arrowParens": "avoid",

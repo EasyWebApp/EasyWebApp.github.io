@@ -1,5 +1,7 @@
 import {
     Button,
+    Container,
+    Col,
     DropdownButton,
     DropdownItem,
     Image,
@@ -20,17 +22,11 @@ const Feature: FC<(typeof feature)[0] & { reverse: boolean }> = ({
     link,
     logo
 }) => (
-    <section
-        className={classNames(
-            'row',
-            'align-items-end',
-            reverse && 'flex-row-reverse'
-        )}
-    >
-        <div className="col-md-10">
+    <section className={classNames('row', 'align-items-end', reverse && 'flex-row-reverse')}>
+        <Col md={10}>
             <h2 className={style['featurette-heading']}>{title}</h2>
             <p className="lead">{summary}</p>
-        </div>
+        </Col>
         <a className="col-md-2" target="_blank" href={link}>
             <Image fluid className={style['featurette-logo']} src={logo} />
         </a>
@@ -40,13 +36,11 @@ const Feature: FC<(typeof feature)[0] & { reverse: boolean }> = ({
 export const MainPage: FC = () => (
     <main>
         <section className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-            <div className="col-md-5 p-lg-5 mx-auto my-5">
+            <Col md={5} className="p-lg-5 mx-auto my-5">
                 <p>
                     <img title="WebCell" src={WebCell_1} />
                 </p>
-                <p className="lead font-weight-normal">
-                    优雅、轻量的 Web 组件引擎
-                </p>
+                <p className="lead font-weight-normal">优雅、轻量的 Web 组件引擎</p>
                 <p>让 Web 组件像细胞、蜂巢、元素一般简单而可靠</p>
 
                 <div className="mt-4">
@@ -63,10 +57,8 @@ export const MainPage: FC = () => (
                         </DropdownButton>
                     </TooltipBox>
                 </div>
-            </div>
-            <div
-                className={`${style['product-device']} shadow-sm d-none d-lg-block`}
-            />
+            </Col>
+            <div className={`${style['product-device']} shadow-sm d-none d-lg-block`} />
             <div
                 className={`${style['product-device']} ${style['product-device-2']} shadow-sm d-none d-lg-block`}
             />
@@ -84,7 +76,7 @@ export const MainPage: FC = () => (
             </Ratio>
         </section>
 
-        <div className="container">
+        <Container>
             <h2 className="text-center display-4 mb-5">核心特性</h2>
 
             {feature.map((item, index) => (
@@ -92,15 +84,10 @@ export const MainPage: FC = () => (
                     <Feature {...item} reverse={!(index % 2)} />
 
                     {index + 1 < feature.length && (
-                        <hr
-                            className={classNames(
-                                'my-5',
-                                style['featurette-divider']
-                            )}
-                        />
+                        <hr className={classNames('my-5', style['featurette-divider'])} />
                     )}
                 </>
             ))}
-        </div>
+        </Container>
     </main>
 );

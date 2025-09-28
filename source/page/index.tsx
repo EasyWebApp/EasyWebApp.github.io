@@ -1,4 +1,4 @@
-import { DropdownItem, NavDropdown, NavLink, OffcanvasNavbar } from 'boot-cell';
+import { Row, Col, DropdownItem, NavDropdown, NavLink, OffcanvasNavbar } from 'boot-cell';
 import { createRouter } from 'cell-router';
 import classNames from 'classnames';
 import { FC, WebCellProps } from 'web-cell';
@@ -21,19 +21,11 @@ const Copyright: FC = () => (
         />
         <small className="d-block mb-3 text-muted">
             &copy; 2018 - {new Date().getFullYear()}
-            <a
-                className="d-block"
-                target="_blank"
-                href="https://github.com/EasyWebApp"
-            >
+            <a className="d-block" target="_blank" href="https://github.com/EasyWebApp">
                 EasyWebApp team
             </a>
         </small>
-        <a
-            rel="license"
-            target="_blank"
-            href="http://creativecommons.org/licenses/by-nc-sa/4.0/"
-        >
+        <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
             <img
                 className="border-0"
                 alt="知识共享许可协议"
@@ -83,10 +75,7 @@ const Copyright: FC = () => (
     </>
 );
 
-const FooterList: FC<WebCellProps & Pick<(typeof footer)[0], 'menu'>> = ({
-    className,
-    menu
-}) => (
+const FooterList: FC<WebCellProps & Pick<(typeof footer)[0], 'menu'>> = ({ className, menu }) => (
     <ul className={classNames('list-unstyled', 'text-small', className)}>
         {menu?.map(({ menu, href, title }) => (
             <li key={href}>
@@ -96,11 +85,7 @@ const FooterList: FC<WebCellProps & Pick<(typeof footer)[0], 'menu'>> = ({
                         <FooterList className="pl-3" menu={menu} />
                     </>
                 ) : (
-                    <a
-                        className="text-muted"
-                        target={isXDomain(href) ? '_blank' : ''}
-                        href={href}
-                    >
+                    <a className="text-muted" target={isXDomain(href) ? '_blank' : ''} href={href}>
                         {title}
                     </a>
                 )}
@@ -109,7 +94,7 @@ const FooterList: FC<WebCellProps & Pick<(typeof footer)[0], 'menu'>> = ({
     </ul>
 );
 
-const { Route } = createRouter();
+const { Router, Route } = createRouter();
 
 export const PageFrame: FC = () => (
     <>
@@ -117,21 +102,15 @@ export const PageFrame: FC = () => (
             variant="dark"
             expand="md"
             sticky="top"
-            brand={
-                <img alt="WebCell" src={WebCell_0} style={{ width: '2rem' }} />
-            }
+            brand={<img alt="WebCell" src={WebCell_0} style={{ width: '2rem' }} />}
         >
             {header.map(({ menu, title, href }) =>
                 menu ? (
                     <NavDropdown className="mx-3" key={title} title={title}>
                         {menu.map(({ href, title }) => (
                             <DropdownItem
-                                target={
-                                    href?.startsWith('http') ? '_top' : '_self'
-                                }
-                                href={
-                                    href?.startsWith('http') ? href : `#${href}`
-                                }
+                                target={href?.startsWith('http') ? '_top' : '_self'}
+                                href={href?.startsWith('http') ? href : `#${href}`}
                             >
                                 {title}
                             </DropdownItem>
@@ -150,32 +129,32 @@ export const PageFrame: FC = () => (
             )}
         </OffcanvasNavbar>
 
-        <div className="flex-fill overflow-auto scrollbar-none">
+        <Router className="flex-fill overflow-auto scrollbar-none">
             <Route path="" component={MainPage} />
             <Route path="upstream" component={UpstreamPage} />
             <Route path="case" component={CasePage} />
-        </div>
+        </Router>
         <hr className={style['featurette-divider']} />
 
         <footer className="container py-5">
-            <div className="row">
-                <div className="col-6 col-md">
+            <Row>
+                <Col md={6}>
                     <Copyright />
-                </div>
+                </Col>
                 <a
-                    className="col-6 col-md"
+                    className="col-md-6"
                     target="_blank"
                     href="https://jq.qq.com/?_wv=1027&amp;k=5he1Sw1"
                 >
                     <img src={EasyWebApp_QQ} title="QQ 群" />
                 </a>
                 {footer.map(({ title, menu }) => (
-                    <div className="col-4 col-md" key={title}>
+                    <Col md={4} key={title}>
                         <h5>{title}</h5>
                         <FooterList menu={menu} />
-                    </div>
+                    </Col>
                 ))}
-            </div>
+            </Row>
         </footer>
     </>
 );
