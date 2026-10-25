@@ -136,7 +136,7 @@ export const feature = [
         link: 'https://web-cell.dev/cell-router/'
     },
     {
-        title: '官方组件库基于 BootStrap 5',
+        title: '官方组件库基于 BootStrap 6',
         summary:
             '用户界面简洁、清爽，HTML 结构规范、语义化，对 SEO、屏幕阅读器友好，一键适配 Material Design 等主题',
         logo: 'https://github.com/twbs.png',
@@ -151,8 +151,7 @@ export const feature = [
     },
     {
         title: '丰富的实用工具',
-        summary:
-            'DOM 接口、事件、动画、URL 解析、时间格式化、国际化、数据处理等实用方法',
+        summary: 'DOM 接口、事件、动画、URL 解析、时间格式化、国际化、数据处理等实用方法',
         logo: WebCell_0,
         link: 'https://web-cell.dev/web-utility/'
     },

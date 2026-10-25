@@ -2,7 +2,7 @@
 
 # WebCell official website
 
-Design of https://web-cell.dev/ is based on [Product][1] & [Carousel][2] templates of BootStrap 5.
+Design of https://web-cell.dev/ is based on [Product][1] & [Carousel][2] templates of BootStrap 6.
 
 [![CI & CD](https://github.com/EasyWebApp/EasyWebApp.github.io/actions/workflows/main.yml/badge.svg)][3]
 
@@ -10,13 +10,13 @@ Design of https://web-cell.dev/ is based on [Product][1] & [Carousel][2] templat
 
 ## Technology stack
 
--   Language: [TypeScript v5][5]
--   Component engine: [WebCell v3][6]
--   Component suite: [BootCell v2][7]
--   State management: [MobX v6][8]
--   PWA framework: [Workbox v7][9]
--   Package bundler: [Parcel v2][10]
--   CI / CD: GitHub [Actions][11] + [Pages][12]
+- Language: [TypeScript v5][5]
+- Component engine: [WebCell v3][6]
+- Component suite: [BootCell v3][7]
+- State management: [MobX v6][8]
+- PWA framework: [Workbox v7][9]
+- Package bundler: [Parcel v2][10]
+- CI / CD: GitHub [Actions][11] + [Pages][12]
 
 ## Development
 

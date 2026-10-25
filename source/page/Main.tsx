@@ -27,7 +27,7 @@ const Feature: FC<(typeof feature)[0] & { reverse: boolean }> = ({
             <h2 className={style['featurette-heading']}>{title}</h2>
             <p className="lead">{summary}</p>
         </Col>
-        <a className="col-md-2" target="_blank" href={link}>
+        <a className="md:col-2" target="_blank" href={link}>
             <Image fluid className={style['featurette-logo']} src={logo} />
         </a>
     </section>
@@ -35,8 +35,8 @@ const Feature: FC<(typeof feature)[0] & { reverse: boolean }> = ({
 
 export const MainPage: FC = () => (
     <main>
-        <section className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-            <Col md={5} className="p-lg-5 mx-auto my-5">
+        <section className="position-relative overflow-hidden p-3 md:p-5 md:m-3 text-center bg-light">
+            <Col md={5} className="lg:p-5 mx-auto my-5">
                 <p>
                     <img title="WebCell" src={WebCell_1} />
                 </p>
@@ -44,11 +44,11 @@ export const MainPage: FC = () => (
                 <p>让 Web 组件像细胞、蜂巢、元素一般简单而可靠</p>
 
                 <div className="mt-4">
-                    <Button className="me-3" variant="primary" href="#Demo">
+                    <Button className="me-3" variant="solid" theme="primary" href="#Demo">
                         在线体验
                     </Button>
                     <TooltipBox content="需先登录 GitHub">
-                        <DropdownButton variant="success" caption="新建项目">
+                        <DropdownButton variant="solid" theme="success" caption="新建项目">
                             {scaffold.map(({ title, ...rest }) => (
                                 <DropdownItem key={title} {...rest}>
                                     {title}
@@ -58,9 +58,9 @@ export const MainPage: FC = () => (
                     </TooltipBox>
                 </div>
             </Col>
-            <div className={`${style['product-device']} shadow-sm d-none d-lg-block`} />
+            <div className={`${style['product-device']} shadow-sm d-none lg:d-block`} />
             <div
-                className={`${style['product-device']} ${style['product-device-2']} shadow-sm d-none d-lg-block`}
+                className={`${style['product-device']} ${style['product-device-2']} shadow-sm d-none lg:d-block`}
             />
         </section>
 

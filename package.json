@@ -20,39 +20,31 @@
         "url": "https://github.com/EasyWebApp/EasyWebApp.github.io/issues"
     },
     "dependencies": {
-        "boot-cell": "^2.0.0-rc.19",
-        "cell-router": "^4.0.3",
+        "boot-cell": "^3.0.0-alpha.0",
+        "cell-router": "^4.0.4",
         "classnames": "^2.5.1",
-        "dom-renderer": "^2.6.2",
+        "dom-renderer": "^2.6.4",
         "github-web-widget": "^4.0.0",
-        "koajax": "^3.1.2",
-        "marked": "^16.3.0",
-        "mobx": "^6.15.0",
+        "koajax": "^3.3.1",
+        "marked": "^18.1.1",
+        "mobx": "^7.1.1",
         "prismjs": "^1.30.0",
-        "web-cell": "^3.2.1",
-        "web-utility": "^4.6.1"
+        "web-cell": "^3.2.2",
+        "web-utility": "^4.8.1"
     },
     "devDependencies": {
-        "@parcel/config-default": "~2.16.0",
-        "@parcel/packager-raw-url": "~2.16.0",
-        "@parcel/transformer-less": "~2.16.0",
-        "@parcel/transformer-typescript-tsc": "~2.16.0",
-        "@parcel/transformer-webmanifest": "~2.16.0",
-        "@types/node": "^22.18.6",
+        "@parcel/config-default": "~2.16.4",
+        "@parcel/packager-raw-url": "~2.16.4",
+        "@parcel/transformer-less": "~2.16.4",
+        "@parcel/transformer-typescript-tsc": "~2.16.4",
+        "@parcel/transformer-webmanifest": "~2.16.4",
+        "@types/node": "^26.6.5",
         "husky": "^9.1.7",
-        "lint-staged": "^16.2.1",
-        "parcel": "~2.16.0",
-        "prettier": "^3.6.2",
-        "typescript": "~5.9.2",
-        "workbox-cli": "^7.3.0"
-    },
-    "pnpm": {
-        "onlyBuiltDependencies": [
-            "@parcel/watcher",
-            "@swc/core",
-            "lmdb",
-            "msgpackr-extract"
-        ]
+        "lint-staged": "^17.6.0",
+        "parcel": "~2.16.4",
+        "prettier": "^3.9.10",
+        "typescript": "~5.9.3",
+        "workbox-cli": "^7.4.1"
     },
     "prettier": {
         "printWidth": 100,
