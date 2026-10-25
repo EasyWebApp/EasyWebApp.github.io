@@ -1,4 +1,4 @@
-import { Row, Col, DropdownItem, NavDropdown, NavLink, OffcanvasNavbar } from 'boot-cell';
+import { Row, Col, DropdownItem, NavDropdown, NavLink, DrawerNavbar } from 'boot-cell';
 import { createRouter } from 'cell-router';
 import classNames from 'classnames';
 import { FC, WebCellProps } from 'web-cell';
@@ -19,7 +19,7 @@ const Copyright: FC = () => (
             title="WebCell"
             src={WebCell_0}
         />
-        <small className="d-block mb-3 text-muted">
+        <small className="d-block mb-3 text-secondary">
             &copy; 2018 - {new Date().getFullYear()}
             <a className="d-block" target="_blank" href="https://github.com/EasyWebApp">
                 EasyWebApp team
@@ -32,7 +32,7 @@ const Copyright: FC = () => (
                 src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"
             />
         </a>
-        <small className="d-none d-md-block">
+        <small className="d-none md:d-block">
             <span
                 // xmlns:dct="http://purl.org/dc/terms/"
                 // @ts-ignore
@@ -85,7 +85,11 @@ const FooterList: FC<WebCellProps & Pick<(typeof footer)[0], 'menu'>> = ({ class
                         <FooterList className="pl-3" menu={menu} />
                     </>
                 ) : (
-                    <a className="text-muted" target={isXDomain(href) ? '_blank' : ''} href={href}>
+                    <a
+                        className="text-secondary"
+                        target={isXDomain(href) ? '_blank' : ''}
+                        href={href}
+                    >
                         {title}
                     </a>
                 )}
@@ -98,7 +102,7 @@ const { Router, Route } = createRouter();
 
 export const PageFrame: FC = () => (
     <>
-        <OffcanvasNavbar
+        <DrawerNavbar
             variant="dark"
             expand="md"
             sticky="top"
@@ -118,7 +122,7 @@ export const PageFrame: FC = () => (
                     </NavDropdown>
                 ) : (
                     <NavLink
-                        className="m-3 my-md-0 mx-md-3"
+                        className="m-3 md:my-0 md:mx-3"
                         key={href}
                         target={href?.startsWith('http') ? '_top' : '_self'}
                         href={href?.startsWith('http') ? href : `#${href}`}
@@ -127,7 +131,7 @@ export const PageFrame: FC = () => (
                     </NavLink>
                 )
             )}
-        </OffcanvasNavbar>
+        </DrawerNavbar>
 
         <Router className="flex-fill overflow-auto scrollbar-none">
             <Route path="" component={MainPage} />
@@ -142,7 +146,7 @@ export const PageFrame: FC = () => (
                     <Copyright />
                 </Col>
                 <a
-                    className="col-md-6"
+                    className="md:col-6"
                     target="_blank"
                     href="https://jq.qq.com/?_wv=1027&amp;k=5he1Sw1"
                 >

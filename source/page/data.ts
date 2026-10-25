@@ -136,7 +136,7 @@ export const feature = [
         link: 'https://web-cell.dev/cell-router/'
     },
     {
-        title: '官方组件库基于 BootStrap 5',
+        title: '官方组件库基于 BootStrap 6',
         summary:
             '用户界面简洁、清爽，HTML 结构规范、语义化，对 SEO、屏幕阅读器友好，一键适配 Material Design 等主题',
         logo: 'https://github.com/twbs.png',

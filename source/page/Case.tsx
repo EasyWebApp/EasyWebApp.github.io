@@ -12,7 +12,7 @@ const Case: FC<(typeof cases)[0] & { reverse: boolean }> = ({
 }) => (
     <section
         className={classNames(
-            'col-12 col-md-6 my-3 my-md-0 pt-3 px-3 pt-md-5 px-md-5 text-center position-relative',
+            'col-12 md:col-6 my-3 md:my-0 pt-3 px-3 md:pt-5 md:px-5 text-center position-relative',
             reverse ? 'bg-light' : 'bg-dark text-white'
         )}
     >
