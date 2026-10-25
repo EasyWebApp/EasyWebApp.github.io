@@ -10,13 +10,13 @@ Design of https://web-cell.dev/ is based on [Product][1] & [Carousel][2] templat
 
 ## Technology stack
 
--   Language: [TypeScript v5][5]
--   Component engine: [WebCell v3][6]
--   Component suite: [BootCell v3][7]
--   State management: [MobX v6][8]
--   PWA framework: [Workbox v7][9]
--   Package bundler: [Parcel v2][10]
--   CI / CD: GitHub [Actions][11] + [Pages][12]
+- Language: [TypeScript v5][5]
+- Component engine: [WebCell v3][6]
+- Component suite: [BootCell v3][7]
+- State management: [MobX v6][8]
+- PWA framework: [Workbox v7][9]
+- Package bundler: [Parcel v2][10]
+- CI / CD: GitHub [Actions][11] + [Pages][12]
 
 ## Development
 

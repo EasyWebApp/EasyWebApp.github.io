@@ -151,8 +151,7 @@ export const feature = [
     },
     {
         title: '丰富的实用工具',
-        summary:
-            'DOM 接口、事件、动画、URL 解析、时间格式化、国际化、数据处理等实用方法',
+        summary: 'DOM 接口、事件、动画、URL 解析、时间格式化、国际化、数据处理等实用方法',
         logo: WebCell_0,
         link: 'https://web-cell.dev/web-utility/'
     },
